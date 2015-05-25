@@ -1,7 +1,7 @@
-package net.common.util;
+package net.common.utils;
 
-import net.common.util.mail.MailInfo;
-import net.common.util.mail.MailUtil;
+import net.common.utils.mail.MailInfo;
+import net.common.utils.mail.MailUtil;
 
 public class MailTest {
 	

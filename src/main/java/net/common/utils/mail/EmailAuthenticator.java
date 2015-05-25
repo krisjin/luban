@@ -1,4 +1,4 @@
-package net.common.util.mail;
+package net.common.utils.mail;
 
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;

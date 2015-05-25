@@ -1,4 +1,4 @@
-package net.common.util;
+package net.common.utils;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
