@@ -34,7 +34,7 @@ public interface IndexedEnum {
         private Util() {
         }
 
-        private static final Logger LOGGER = LoggerFactory.getLogger(Util.class);
+        private static final Logger log = LoggerFactory.getLogger(Util.class);
 
         /**
          * 索引预警上限值，索引超过该上限可能存在空间浪费问题
@@ -65,7 +65,7 @@ public interface IndexedEnum {
             }
 
             if (maxIndex >= WARNNING_MAX_INDEX) {
-                LOGGER.warn("The index of Enum[{}] exceed threshold:{}.There is wasting memory probably.",
+                log.warn("The index of Enum[{}] exceed threshold:{}.There is wasting memory probably.",
                         enums.getClass().getComponentType().getName(), WARNNING_MAX_INDEX);
             }
 
