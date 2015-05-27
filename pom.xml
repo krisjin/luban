@@ -4,7 +4,7 @@
 
     <groupId>net.common.util</groupId>
     <artifactId>common-util</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-REALEASE</version>
     <packaging>jar</packaging>
 
     <name>common-util</name>
