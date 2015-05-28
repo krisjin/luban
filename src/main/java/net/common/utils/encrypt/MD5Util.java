@@ -17,6 +17,10 @@ import java.security.NoSuchAlgorithmException;
  */
 public class MD5Util {
 
+    private MD5Util() {
+    }
+
+
     /**
      * 计算md5摘要
      *
@@ -69,8 +73,6 @@ public class MD5Util {
         return ByteUtil.byte2hex(digest(source));
     }
 
-    private MD5Util() {
-    }
 
     /**
      * 通过MD5加密文件
