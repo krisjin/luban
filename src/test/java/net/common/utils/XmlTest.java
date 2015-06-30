@@ -25,6 +25,7 @@ public class XmlTest {
 
             String name = entry.getKey();
             Server server = entry.getValue();
+            System.out.println(server);
         }
     }
 }

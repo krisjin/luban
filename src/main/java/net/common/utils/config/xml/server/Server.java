@@ -17,6 +17,7 @@ import java.util.Map;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "host")
 public class Server {
+
     @XmlAttribute(name = "name", required = true)
     private String name;
     @XmlAttribute(name = "port", required = true)
@@ -80,4 +81,15 @@ public class Server {
     }
 
 
+    @Override
+    public String toString() {
+        StringBuilder server = new StringBuilder();
+        server.append("{");
+        server.append("name:").append(this.name).append(",");
+        server.append("port:").append(this.port).append(",");
+        server.append("host:").append(this.host).append(",");
+        server.append("password:").append(this.password);
+        server.append("}");
+        return server.toString();
+    }
 }
