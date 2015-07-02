@@ -1,8 +1,8 @@
 package net.common.utils.service.common;
 
-import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import net.common.utils.service.INameResourceService;
 
 /**
@@ -10,7 +10,7 @@ import net.common.utils.service.INameResourceService;
  */
 public class CommonNameResourceServiceImpl<T> implements INameResourceService<T> {
     //存放服务的缓存池
-    private final Cache<String, T> clientCache;
+    private final LoadingCache<String, T> clientCache;
 
     public CommonNameResourceServiceImpl(CacheLoader<String, T> cacheLoader) {
         this.clientCache = CacheBuilder.newBuilder().build(cacheLoader);
@@ -18,6 +18,6 @@ public class CommonNameResourceServiceImpl<T> implements INameResourceService<T>
 
     @Override
     public T get(String name) throws Exception {
-        return clientCache.getIfPresent(name);
+        return clientCache.get(name);
     }
 }
