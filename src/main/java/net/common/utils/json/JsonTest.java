@@ -1,6 +1,7 @@
 package net.common.utils.json;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * <p/>
@@ -19,13 +20,15 @@ public class JsonTest {
         String userString = JSON.toJSONString(user);
         User retUser = JSON.parseObject(userString, User.class);
 
-        System.out.println(userString);
+
+        JSONObject jsonObject = new JSONObject();
 
     }
 
     static class User {
         private String userName;
         private int age;
+        private String address;
 
         public String getUserName() {
             return userName;
@@ -41,6 +44,14 @@ public class JsonTest {
 
         public void setAge(int age) {
             this.age = age;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
         }
     }
 }
