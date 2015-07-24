@@ -65,7 +65,7 @@ public final class ExcelUtil {
                 //excel2007
                 workbook = new XSSFWorkbook(OPCPackage.open(fisNew));
             } else {
-                LOGGER.info("The import file type is not correct！");
+               // LOGGER.info("The import file type is not correct！");
                 return new ArrayList<Class<?>>();
             }
 

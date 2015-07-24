@@ -14,8 +14,7 @@ import org.codehaus.jackson.type.JavaType;
  * 添加JacksonStdImpl注解，则StringArraySerializer使用自身方法处理String
  * 不添加，则判断是否存在String的Serializer存在，存在使用，不存在使用自身方法
  */
-public class StdEscapeHTMLSerializerProvider
-        extends StdSerializerProvider {
+public class StdEscapeHTMLSerializerProvider extends StdSerializerProvider {
 
     @SuppressWarnings("unchecked")
     public StdEscapeHTMLSerializerProvider(SerializationConfig serializationConfig) throws JsonMappingException {

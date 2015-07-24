@@ -20,7 +20,7 @@ package net.common.utils.html;
  * @since 01.03.2003
  * @see org.apache.commons.lang.StringEscapeUtils
  */
-public abstract class HtmlUtils {
+public  class HtmlUtils {
 
     /**
      * Shared instance of pre-parsed HTML character entity references.

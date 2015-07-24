@@ -22,7 +22,10 @@ public class JsonTest {
 
 
         JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "dd");
+        jsonObject.put("age", "1209");
 
+        System.out.println(jsonObject.toJSONString());
 
     }
 
