@@ -47,7 +47,7 @@ public class SmsClientRPC {
 
             QName qName = new QName("http://music.service.sms.op.cpro.com", "resultFeedback");
 
-            for (int i = 0; i < 100000; i++) {
+            for (int i = 0; i < 10; i++) {
                 Object[] ret = rpcServiceClient.invokeBlocking(qName, params, classes);
 
 
