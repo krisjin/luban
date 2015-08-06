@@ -24,7 +24,7 @@ public class SmsClientRPC {
 
             Options options = rpcServiceClient.getOptions();
 
-            EndpointReference endpointReference = new EndpointReference("http://localhost:9090/services/SmsFeedbackService.SmsFeedbackServiceHttpEndpoint/");
+            EndpointReference endpointReference = new EndpointReference("http://localhost:9090/services/SmsFeedbackService?wsdl");
             options.setTo(endpointReference);
 
             ResultFeedbackEvt resultFeedbackEvt = new ResultFeedbackEvt();
@@ -45,16 +45,16 @@ public class SmsClientRPC {
             Class[] classes = new Class[]{Response.class};
             Object[] params = new Object[]{resultFeedbackEvt};
 
-            QName qName = new QName("http://music.service.sms.op.cpro.com", "resultFeedback");
+            QName qName = new QName("http://ws.partner.com", "resultFeedback");
 
-            for (int i = 0; i < 10; i++) {
+//            for (int i = 0; i < 10; i++) {
                 Object[] ret = rpcServiceClient.invokeBlocking(qName, params, classes);
 
 
                 Response responses = (Response) ret[0];
 
                 System.out.println("----" + responses.getReturn_desc());
-            }
+//            }
         } catch (AxisFault axisFault) {
             axisFault.printStackTrace();
         }
