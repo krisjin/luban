@@ -15,7 +15,7 @@ public class WebUtil {
         Pattern p;
         Matcher m;
         boolean b;
-        p = Pattern.compile("^[1][3,4,5,8][0-9]{9}$"); // 验证手机号
+        p = Pattern.compile("^[1][3,4,5,8][0-9]{9}$");
         m = p.matcher(str);
         b = m.matches();
         return b;

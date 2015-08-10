@@ -34,7 +34,7 @@ public class SmsClientRPC {
 //                resultFeedbackEvt.setResdesc(new String("原始短信订购方式".getBytes(), "UTF-8"));
 //                resultFeedbackEvt.setResdesc(new String("下载回执类型消息".getBytes(), "UTF-8"));
                 resultFeedbackEvt.setResdesc(new String("平台类型消息".getBytes(), "UTF-8"));
-                resultFeedbackEvt.setMsg(new String("好歌曲aa@526@1200@908@order@222".getBytes(), "UTF-8"));
+                resultFeedbackEvt.setMsg(new String("追忆@526@1200@908@order@222".getBytes(), "UTF-8"));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
