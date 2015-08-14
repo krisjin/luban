@@ -11,10 +11,6 @@ import java.io.IOException;
 
 /**
  * JavaScript资源标签
- * <p/>
- * User : dongyong.wang@mail-inc.com
- * Date: 12-05-09
- * Time: 下午2:15
  */
 public class FragJsTag extends BaseResourceFragTag {
 

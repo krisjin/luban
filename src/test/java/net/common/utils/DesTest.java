@@ -2,12 +2,15 @@ package net.common.utils;
 
 import junit.framework.TestCase;
 import net.common.utils.encrypt.DesEncrypterUtil;
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
 public class DesTest extends TestCase {
-    public static void main(String[] args) {
+
+    @Test
+    public void test() {
 
         String cipherStr = "Lp6dKGZd9YH0Fd6pfLyzVe/+GE7slLu7Tw5eJYucxWg=";
 
