@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.common.util</groupId>
-    <artifactId>common-util</artifactId>
+    <groupId>net.common.base</groupId>
+    <artifactId>common-base</artifactId>
     <version>0.0.1-REALEASE</version>
     <packaging>jar</packaging>
 
-    <name>common-util</name>
+    <name>common-base</name>
     <url>http://maven.apache.org</url>
 
     <properties>

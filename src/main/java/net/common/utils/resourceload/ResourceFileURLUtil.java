@@ -16,15 +16,15 @@ public final class ResourceFileURLUtil {
     /**
      * 默认的JPG格式图片域名
      */
-    private static final String JPG_DEFAULT_DOMAIN = "sor.ospre.com";
+    private static final String JPG_DEFAULT_DOMAIN = "eleword.net";
     /**
      * 默认的JS域名
      */
-    private static final String JS_DEFAULT_DOMAIN = "sor.ospre.com";
+    private static final String JS_DEFAULT_DOMAIN = "eleword.net";
     /**
      * 默认的CSS域名
      */
-    private static final String CSS_DEFAULT_DOMAIN = "sor.ospre.com";
+    private static final String CSS_DEFAULT_DOMAIN = "eleword.net";
     /**
      * css的正则表达式模式
      */

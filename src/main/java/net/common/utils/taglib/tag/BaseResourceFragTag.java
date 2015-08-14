@@ -10,14 +10,11 @@ import javax.servlet.jsp.tagext.BodyTagSupport;
 /**
  * 基本的资源Tag,用于标识一些在页面在页面中引用的资源
  * <p/>
- * User : dongyong.wang@mail-inc.com
- * Date: 12-05-09
- * Time: 下午2:15
  */
 public abstract class BaseResourceFragTag extends BodyTagSupport {
 
     /**
-     * 要被加载的资源的类型,如javascript,css等
+     * 加载的资源的类型,如javascript,css等
      */
     private final ResourceType resourceType;
 
