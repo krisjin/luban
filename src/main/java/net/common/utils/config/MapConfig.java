@@ -23,7 +23,7 @@ public class MapConfig {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MapConfig.class);
 
-    private String appConfPath;
+    private String confPath;
 
     /**
      * 从配置中取得int类型的值,如果name不存在,则返回默认值
@@ -126,10 +126,10 @@ public class MapConfig {
     }
 
 
-    public static ImmutableMap<String, String> parseConf(String appConfPath) {
+    public static ImmutableMap<String, String> parseConf(String confPath) {
         Map<String, String> all = Maps.newHashMap();
-        if (appConfPath != null) {
-            String[] appConfs = appConfPath.split(",");
+        if (confPath != null) {
+            String[] appConfs = confPath.split(",");
             List<String> configList = Lists.newArrayList();
             for (final String conf : appConfs) {
                 if (configList.contains(conf)) {
@@ -155,11 +155,11 @@ public class MapConfig {
         return ImmutableMap.<String, String>builder().putAll(all).build();
     }
 
-    public String getAppConfPath() {
-        return appConfPath;
+    public String getConfPath() {
+        return confPath;
     }
 
-    public void setAppConfPath(String appConfPath) {
-        this.appConfPath = appConfPath;
+    public void setConfPath(String confPath) {
+        this.confPath = confPath;
     }
 }
