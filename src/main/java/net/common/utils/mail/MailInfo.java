@@ -23,6 +23,12 @@ public class MailInfo {
 
     private String htmlBody;
 
+    private String mailName;
+
+    private boolean isAuth;
+
+    private int mailPort;
+
     public String getUsername() {
         return username;
     }
@@ -88,5 +94,28 @@ public class MailInfo {
     }
 
 
+    public String getMailName() {
+        return mailName;
+    }
+
+    public void setMailName(String mailName) {
+        this.mailName = mailName;
+    }
+
+    public boolean isAuth() {
+        return isAuth;
+    }
+
+    public void setIsAuth(boolean isAuth) {
+        this.isAuth = isAuth;
+    }
+
+    public int getMailPort() {
+        return mailPort;
+    }
+
+    public void setMailPort(int mailPort) {
+        this.mailPort = mailPort;
+    }
 }
 

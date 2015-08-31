@@ -94,4 +94,26 @@ public class ConfigOper {
         }
         return s;
     }
+
+
+    /**
+     * 从配置文件中取得boolean类型的值,如果name不存在,则返回默认值<code>defaultValue</code>
+     *
+     * @param name
+     * @param config
+     * @param defaultValue
+     * @return
+     */
+    public boolean getBoolean(@Nonnull String name, @Nullable Map<String, String> config, boolean defaultValue) {
+        Preconditions.checkArgument(name != null, "name");
+        if (config == null) {
+            return defaultValue;
+        }
+        String s = config.get(name);
+        if (s == null) {
+            return defaultValue;
+        }
+        return Boolean.valueOf(s);
+    }
+
 }

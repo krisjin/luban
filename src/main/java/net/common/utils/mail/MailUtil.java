@@ -19,18 +19,22 @@ public class MailUtil {
     public static void sendTextMail(MailInfo info) throws Exception {
         Properties props = new Properties();
         props.put("mail.smtp.host", info.getMailServerHost());
-        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.auth", info.isAuth());
+        Authenticator auth = null;
+        if (info.isAuth()) {
+            auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
+        }
 
-        Authenticator auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
         Session session = Session.getDefaultInstance(props, auth);
 
         MimeMessage message = new MimeMessage(session);
         message.setSentDate(new Date());
-        Address address = new InternetAddress(info.getMailFrom(), info.getUsername());
+        Address address = new InternetAddress(info.getMailFrom(), info.getMailName());
         message.setFrom(address);
 
         String mailTo = info.getMailTo();
         String[] mailsTo = mailTo.split(",");
+
         InternetAddress[] mailToAddress = new InternetAddress[mailsTo.length];
         for (int i = 0; i < mailsTo.length; i++) {
             mailToAddress[i] = new InternetAddress(mailsTo[i]);
@@ -45,9 +49,12 @@ public class MailUtil {
 
         Properties props = new Properties();
         props.put("mail.smtp.host", info.getMailServerHost());
-        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.auth", info.isAuth());
 
-        Authenticator auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
+        Authenticator auth = null;
+        if (info.isAuth()) {
+            auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
+        }
         Session session = Session.getDefaultInstance(props, auth);
 
         Multipart multipart = new MimeMultipart();
@@ -76,9 +83,12 @@ public class MailUtil {
     public static void sendAttachEmail(MailInfo info, String[] filePath) throws Exception {
         Properties props = new Properties();
         props.put("mail.smtp.host", info.getMailServerHost());
-        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.auth", info.isAuth());
 
-        Authenticator auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
+        Authenticator auth = null;
+        if (info.isAuth()) {
+            auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
+        }
         Session session = Session.getDefaultInstance(props, auth);
         Message msg = new MimeMessage(session);
         msg.setSentDate(new Date());

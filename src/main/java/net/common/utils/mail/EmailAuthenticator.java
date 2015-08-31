@@ -23,7 +23,6 @@ public class EmailAuthenticator extends Authenticator {
 	}
 
 	protected PasswordAuthentication getPasswordAuthentication() {
-
 		return new PasswordAuthentication(this.userName, this.password);
 	}
 
