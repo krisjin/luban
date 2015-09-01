@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
+ * Cookie操作工具类
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/5/25

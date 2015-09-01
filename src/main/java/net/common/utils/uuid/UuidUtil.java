@@ -2,6 +2,9 @@ package net.common.utils.uuid;
 
 import java.util.UUID;
 
+/**
+ * UUID工具类
+ */
 public final class UuidUtil {
 
     private UuidUtil() {
