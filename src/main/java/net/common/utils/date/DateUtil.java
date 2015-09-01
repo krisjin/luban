@@ -24,6 +24,7 @@ public final class DateUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(DateUtil.class);
 
     public static final String DATE_STR = "yyyy-MM-dd";
+    public static final String DATE_STR1 = "yyyyMMdd";
     public static final String DATE_STR_2 = "yyyy/MM/dd";
     public static final String DATE_STR_3 = "yyyy-MM-dd'T'HH:mm:ss";
     public static final String TIME_STR = "HH:mm:ss";
@@ -61,12 +62,12 @@ public final class DateUtil {
 
     /**
      * 获取当前日期和时间
-     * 格式: <code>yyyy-MM-dd'T'HH:mm:ss</code>
+     * 格式: <code>yyyy-MM-dd HH:mm:ss</code>
      *
      * @return
      */
     public static final String getDateTimeStr() {
-        return DateFormatUtils.ISO_DATETIME_FORMAT.format(new Date());
+        return DateFormatUtils.format(new Date(), DATETIME_STR);
     }
 
     /**

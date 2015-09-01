@@ -19,8 +19,9 @@ public class DateTest {
         Date date = DateUtil.parseDate("20150810145612", "yyyyMMddHHmmss");
 
         String dateStr = DateUtil.formatDate(date, "yyyy-MM-dd");
-
+        String currentDate = DateUtil.getDateTimeStr();
         System.out.println(date);
         System.out.println(dateStr);
+        System.out.println(currentDate);
     }
 }
