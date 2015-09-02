@@ -7,13 +7,13 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 /**
- * 配置操作
+ * 配置基础操作
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/8/31
  * Time: 10:29
  */
-public class ConfigOper {
+public class MapConfigOperate {
 
     /**
      * 从配置中取得int类型的值,如果name不存在,则返回默认值
