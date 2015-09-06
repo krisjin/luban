@@ -10,16 +10,16 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
+ * MD5摘要
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/5/28
  * Time: 19:17
  */
-public class MD5Util {
+public final class MD5Util {
 
     private MD5Util() {
     }
-
 
     /**
      * 计算md5摘要
