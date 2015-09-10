@@ -1,2 +1,5 @@
-# common-util
-common util
+# 应用开发基础库
+
+## 功能介绍
+
+1. 邮件工具类
