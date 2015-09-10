@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * -verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails  -XX:+PrintGCTimeStamps
+ * -verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails  -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC  -XX:+PrintGCApplicationStoppedTime
+ * -XX:-PrintTenuringDistribution
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/9/2
