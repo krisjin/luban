@@ -36,9 +36,26 @@ public class BitUtil {
         } else return false;
     }
 
+    /**
+     * @param i
+     * @param j
+     */
+    public static void swap(Integer i, Integer j) {
+        System.out.println("i=" + i + ", j=" + j);
+        if (i != j) {
+            i ^= j;
+            j ^= i;
+            i ^= j;
+        }
+        System.out.println("i=" + i + ", j=" + j);
+
+    }
+
     public static void main(String[] args) {
         boolean ret = isOdd(8);
         System.out.println(ret);
+        int i = 2, j = 3;
+        swap(i, j);
     }
 
 
