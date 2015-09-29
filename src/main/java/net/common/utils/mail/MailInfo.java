@@ -1,6 +1,8 @@
 package net.common.utils.mail;
 
 /**
+ * 邮箱信息
+ *
  * @author krisjin (mailto:krisjin86@163.com)
  * @date 2014-5-23下午4:25:02
  */
@@ -25,7 +27,7 @@ public class MailInfo {
 
     private String mailName;
 
-    private boolean isAuth;
+    private boolean isAuth = true;
 
     private int mailPort;
 
