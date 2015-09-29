@@ -10,16 +10,27 @@ import java.util.Date;
 import java.util.Properties;
 
 /**
+ * 邮件工具类
+ *
  * @author krisjin (mailto:krisjin86@163.com)
  * @date 2014-5-23下午4:16:22
  */
 
-public class MailUtil {
+public final class MailUtil {
 
+    private static final String MAIL_HOST_PROP = "mail.smtp.host";
+    private static final String MAIL_AUTH_PROP = "mail.smtp.auth";
+
+    /**
+     * 发送文本邮件
+     *
+     * @param info
+     * @throws Exception
+     */
     public static void sendTextMail(MailInfo info) throws Exception {
         Properties props = new Properties();
-        props.put("mail.smtp.host", info.getMailServerHost());
-        props.put("mail.smtp.auth", info.isAuth());
+        props.put(MAIL_HOST_PROP, info.getMailServerHost());
+        props.put(MAIL_AUTH_PROP, info.isAuth());
         Authenticator auth = null;
         if (info.isAuth()) {
             auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
@@ -45,11 +56,17 @@ public class MailUtil {
         Transport.send(message);
     }
 
+    /**
+     * 发送HTML格式邮件
+     *
+     * @param info
+     * @throws Exception
+     */
     public static void sendHtmlEmail(MailInfo info) throws Exception {
 
         Properties props = new Properties();
-        props.put("mail.smtp.host", info.getMailServerHost());
-        props.put("mail.smtp.auth", info.isAuth());
+        props.put(MAIL_HOST_PROP, info.getMailServerHost());
+        props.put(MAIL_AUTH_PROP, info.isAuth());
 
         Authenticator auth = null;
         if (info.isAuth()) {
@@ -80,10 +97,17 @@ public class MailUtil {
         Transport.send(message);
     }
 
+    /**
+     * 发送带附件的邮件
+     *
+     * @param info
+     * @param filePath
+     * @throws Exception
+     */
     public static void sendAttachEmail(MailInfo info, String[] filePath) throws Exception {
         Properties props = new Properties();
-        props.put("mail.smtp.host", info.getMailServerHost());
-        props.put("mail.smtp.auth", info.isAuth());
+        props.put(MAIL_HOST_PROP, info.getMailServerHost());
+        props.put(MAIL_AUTH_PROP, info.isAuth());
 
         Authenticator auth = null;
         if (info.isAuth()) {
