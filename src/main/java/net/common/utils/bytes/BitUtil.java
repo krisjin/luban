@@ -56,6 +56,12 @@ public class BitUtil {
         System.out.println(ret);
         int i = 2, j = 3;
         swap(i, j);
+
+        String a = Integer.toBinaryString(i);
+        String b = Integer.toBinaryString(j);
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(i ^ j);
     }
 
 
