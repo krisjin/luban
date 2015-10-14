@@ -3,12 +3,12 @@ package net.common.utils.probe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.management.GarbageCollectorMXBean;
-import java.lang.management.ManagementFactory;
-import java.lang.management.MemoryMXBean;
-import java.lang.management.MemoryUsage;
+import java.lang.management.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 /**
@@ -335,4 +335,188 @@ public final class JVMUtil {
                     '}';
         }
     }
+
+    /**
+     * 线程,CPU使用率的监控
+     */
+    public static final class Sys {
+
+        private Sys() {
+        }
+
+        private static final ThreadMXBean threadBean = ManagementFactory.getThreadMXBean();
+        private static final OperatingSystemMXBean mxBean = ManagementFactory.getOperatingSystemMXBean();
+        private static final RuntimeMXBean rmBean = ManagementFactory.getRuntimeMXBean();
+        private static final Method processCpuTimeMethod = getProcessCpuTimeMethod();
+        private static final ProcessCPUUsage cpuUsage = new ProcessCPUUsage();
+
+        private static class ProcessCPUUsage {
+            //final int cpus = Runtime.getRuntime().availableProcessors();
+            long prevUpTime = -1;
+            long prevProcessCpuTime = -1L;
+            volatile float cpuUsage = -1F;
+
+            /**
+             * 更新数据,此方法的调用应该有一定的时间间隔
+             */
+            public synchronized void update() {
+                final long upTime = rmBean.getUptime();
+                final long processCpuTime = getProcesCpuTime();
+                if (processCpuTime < 0) {
+                    return;
+                }
+                if (prevUpTime > 0L && upTime > prevUpTime) {
+                    // elapsedCpu is in ns and elapsedTime is in ms.
+                    long elapsedCpu = processCpuTime - prevProcessCpuTime;
+                    long elapsedTime = upTime - prevUpTime;
+                    cpuUsage = elapsedCpu / (elapsedTime * 10000F);
+                } else {
+                    logger.warn("prevUpTime=" + prevUpTime + " upTime=" + upTime);
+                }
+                this.prevUpTime = upTime;
+                this.prevProcessCpuTime = processCpuTime;
+            }
+        }
+
+        /**
+         * 更新CPU使用率的数据,此方法的调用应该有一定的时间间隔
+         */
+        public static void updateCpuUsage() {
+            cpuUsage.update();
+        }
+
+        /**
+         * 取得Jvm的CPU使用率
+         *
+         * @return
+         */
+        public static float getCpuUsage() {
+            return cpuUsage.cpuUsage;
+        }
+
+
+        /**
+         * 取得jvm进程的cpu时间,单位ns
+         *
+         * @return <0,无法正确取得进程的时间;>=0 为
+         */
+        public static long getProcesCpuTime() {
+            if (processCpuTimeMethod == null) {
+                return -1;
+            }
+            try {
+                Object value = processCpuTimeMethod.invoke(mxBean);
+                if (value instanceof Number) {
+                    return ((Number) value).longValue();
+                } else {
+                    logger.warn("Not a number value for " + value);
+                }
+            } catch (IllegalAccessException e) {
+                logger.error("Can't get the ProcessCpuTime method for class ", e);
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
+            return -1;
+        }
+
+        /**
+         * 线程数
+         *
+         * @return
+         */
+        public static long getThreadCount() {
+            return threadBean.getThreadCount();
+        }
+
+        /**
+         * 线程的峰值数
+         *
+         * @return
+         */
+        public static long getPeakThreadCount() {
+            return threadBean.getPeakThreadCount();
+        }
+
+        /**
+         * 取得Jvm运行的类名及其参数
+         * 该方法的实现依赖sun jdk1.6
+         *
+         * @return
+         */
+        public static String getJavaCommand() {
+            try {
+                Class clazz = Class.forName("sun.misc.VMSupport");
+                @SuppressWarnings("unchecked")
+                Method m = clazz.getMethod("getAgentProperties");
+                m.setAccessible(true);
+                Properties properties = (Properties) m.invoke(clazz);
+                return properties.getProperty("sun.java.command");
+            } catch (ClassNotFoundException e) {
+                logger.error("Fail get class ", e);
+            } catch (NoSuchMethodException e) {
+                logger.error("Fail get the method", e);
+            } catch (InvocationTargetException e) {
+                logger.error("Fail invoke the method", e);
+            } catch (Exception e) {
+                logger.error("Unkonwn error.", e);
+            }
+            return null;
+        }
+
+        /**
+         * 取得Java进程的名称,格式为mainClassName+["-"+parameter[0]]
+         *
+         * @param javaCommand
+         * @return
+         */
+        public static String getJavaProcessName(final String javaCommand) {
+            if (javaCommand == null || javaCommand.isEmpty()) {
+                return null;
+            }
+            String[] strings = javaCommand.split("\\s");
+
+            // 取得Main class name
+            String mainClassName = javaCommand;
+            String firstParam = "";
+            {
+                //获取main class的名称,不包括包名
+                if (strings.length > 0) {
+                    String fullName = strings[0];
+                    int dotIndex = fullName.lastIndexOf(".");
+                    if (dotIndex > 0) {
+                        mainClassName = fullName.substring(dotIndex + 1);
+                    }
+                }
+                //如果有参数,那取第一个参数作为名称的额外标识
+                if (strings.length > 1) {
+                    firstParam = strings[1];
+                }
+            }
+            if (firstParam.isEmpty()) {
+                return mainClassName;
+            } else {
+                return mainClassName + "-" + firstParam;
+            }
+        }
+
+        /**
+         * 取得getProcessCpuTime方法,这个方法是Orace jvm的方法
+         *
+         * @return
+         */
+        private static Method getProcessCpuTimeMethod() {
+            Class aClass = mxBean.getClass();
+            try {
+                @SuppressWarnings("unchecked")
+                Method m = aClass.getMethod("getProcessCpuTime");
+                m.setAccessible(true);
+                return m;
+            } catch (NoSuchMethodException e) {
+                logger.error("Can't find the getProcessCpuTime method for class " + aClass, e);
+            }
+            return null;
+        }
+    }
+
+
 }
