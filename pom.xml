@@ -122,7 +122,7 @@
             <artifactId>esapi</artifactId>
             <version>2.0.1</version>
             <exclusions>
-                <!-- 以下依赖包版本低于ospre项目,目前暂不需要的依赖也未引入 -->
+                <!-- 以下依赖包版本低于项目,目前暂不需要的依赖也未引入 -->
                 <exclusion>
                     <groupId>commons-configuration</groupId>
                     <artifactId>commons-configuration</artifactId>
@@ -152,6 +152,11 @@
                     <artifactId>bsh-core</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.6</version>
         </dependency>
 
         <dependency>
