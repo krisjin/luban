@@ -23,5 +23,8 @@ public class DateTest {
         System.out.println(date);
         System.out.println(dateStr);
         System.out.println(currentDate);
+        Date d = DateUtil.getPreMonth();
+
+        System.out.println(DateUtil.formatDate(d,DateUtil.DATETIME_STR));
     }
 }

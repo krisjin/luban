@@ -5,6 +5,7 @@ import com.google.common.base.Strings;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.time.DateFormatUtils;
 import org.apache.commons.lang.time.DateUtils;
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -161,6 +162,26 @@ public final class DateUtil {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MONTH, 1);
         return calendar.get(Calendar.MONTH) + 1;
+    }
+
+    /**
+     * 获取前一个月的日期
+     *
+     * @return
+     */
+    public static Date getPreMonth() {
+        DateTime dateTime = new DateTime();
+        DateTime d = dateTime.minusMonths(1);
+        Date date = d.toDate();
+        SimpleDateFormat format = new SimpleDateFormat(DATETIME_STR);
+        String s = format.format(date);
+        Date retDate = null;
+        try {
+            retDate = format.parse(s);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return retDate;
     }
 
     /**
@@ -336,7 +357,6 @@ public final class DateUtil {
     public static class MilTimeRange {
         long startTime;
         long endTime;
-
 
         MilTimeRange(long startTime, long endTime) {
             this.startTime = startTime;
