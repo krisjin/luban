@@ -23,7 +23,6 @@ public final class JVMUtil {
     private static final Logger logger = LoggerFactory.getLogger(JVMUtil.class);
 
     private JVMUtil() {
-
     }
 
     /**

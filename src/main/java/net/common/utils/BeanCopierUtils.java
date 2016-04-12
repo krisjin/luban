@@ -5,6 +5,9 @@ import net.sf.cglib.beans.BeanCopier;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ */
 public class BeanCopierUtils {
     public static Map<String, BeanCopier> beanCopierMap = new HashMap<String, BeanCopier>();
 

@@ -6,6 +6,13 @@ import java.util.List;
 /**
  * -verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails  -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC  -XX:+PrintGCApplicationStoppedTime
  * -XX:-PrintTenuringDistribution
+ * -XX:+PrintCommandLineFlags
+ * -XX:MaxTenuringThreshold=15
+ * -XX:ParallelGCThreads=4
+ * -XX:SurvivorRatio=8
+ * -XX:NewRatio=8
+ * -XX:+UseConcMarkSweepGC
+ *
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/9/2

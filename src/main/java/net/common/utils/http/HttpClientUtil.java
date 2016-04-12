@@ -38,8 +38,6 @@ public final class HttpClientUtil {
 
     public static boolean isConnected(String url) {
         boolean isConnect = true;
-
-
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
         HttpGet httpGet = new HttpGet(url);
