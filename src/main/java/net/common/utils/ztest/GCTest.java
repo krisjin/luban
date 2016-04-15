@@ -12,7 +12,8 @@ import java.util.List;
  * -XX:SurvivorRatio=8
  * -XX:NewRatio=8
  * -XX:+UseConcMarkSweepGC
- *
+ * -XX:+HeapDumpOnOutOfMemoryError
+ *-XX:HeapDumpPath=./java_pid<pid>.hprof
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/9/2
