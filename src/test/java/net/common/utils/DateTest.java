@@ -25,6 +25,11 @@ public class DateTest {
         System.out.println(currentDate);
         Date d = DateUtil.getPreMonth();
 
-        System.out.println(DateUtil.formatDate(d,DateUtil.DATETIME_STR));
+        System.out.println(DateUtil.formatDate(d, DateUtil.DATETIME_STR));
+
+        Date date1 = DateUtil.getDate(-15);
+        System.out.println(date1);
+        Date date2 = DateUtil.getCurrentDayEndTime();
+        System.out.println(date2);
     }
 }

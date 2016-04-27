@@ -78,7 +78,16 @@ public final class DateUtil {
     public static final Date getDate(int n) {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, n);
-        return calendar.getTime();
+        Date date = calendar.getTime();
+        String dateStr = formatDate(date);
+        SimpleDateFormat format = new SimpleDateFormat(DATE_STR);
+        Date retDate = null;
+        try {
+            retDate = format.parse(dateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return retDate;
     }
 
     /**
@@ -353,6 +362,20 @@ public final class DateUtil {
         return timeRange;
     }
 
+    public static Date getCurrentDayEndTime() {
+        SimpleDateFormat formatDateTime = new SimpleDateFormat(DATETIME_STR);
+        SimpleDateFormat format = new SimpleDateFormat(DATE_STR);
+        Date date1 = getDate(0);
+        String s = format.format(date1);
+        s = s + " 23:59:59";
+        Date d = null;
+        try {
+            d = formatDateTime.parse(s);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return d;
+    }
 
     public static class MilTimeRange {
         long startTime;
