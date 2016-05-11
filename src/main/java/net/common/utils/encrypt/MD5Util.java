@@ -1,7 +1,7 @@
 package net.common.utils.encrypt;
 
 import com.google.common.base.Preconditions;
-import net.common.utils.bytes.ByteUtil;
+import net.common.utils.codec.ByteUtil;
 
 import java.io.FileInputStream;
 import java.io.UnsupportedEncodingException;

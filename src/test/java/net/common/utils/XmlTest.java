@@ -5,7 +5,7 @@ import net.common.utils.config.xml.client.ServerElement;
 import net.common.utils.config.xml.client.ServiceGroup;
 import net.common.utils.config.xml.server.Server;
 import net.common.utils.config.xml.server.Servers;
-import net.common.utils.xml.JAXBUtil;
+import net.common.utils.io.JAXBUtil;
 
 import java.util.List;
 import java.util.Map;

@@ -1,6 +1,6 @@
 package net.common.utils;
 
-import net.common.utils.gzip.GzipUtil;
+import net.common.utils.io.GzipUtil;
 import org.junit.Test;
 
 import java.io.IOException;

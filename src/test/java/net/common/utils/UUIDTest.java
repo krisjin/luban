@@ -1,6 +1,6 @@
 package net.common.utils;
 
-import net.common.utils.uuid.UuidUtil;
+import net.common.utils.encrypt.UuidUtil;
 import org.junit.Test;
 
 /**

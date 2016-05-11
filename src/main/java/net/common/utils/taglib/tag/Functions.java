@@ -1,8 +1,8 @@
 package net.common.utils.taglib.tag;
 
 import com.google.common.base.Strings;
-import net.common.utils.html.HtmlUtils;
-import net.common.utils.html.JavaScriptUtils;
+import net.common.utils.web.html.HtmlUtils;
+import net.common.utils.web.html.JavaScriptUtils;
 import org.owasp.esapi.ESAPI;
 
 /**
