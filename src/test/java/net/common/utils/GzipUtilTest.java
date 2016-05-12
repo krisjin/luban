@@ -15,7 +15,7 @@ public class GzipUtilTest {
 
     @Test
     public void test() {
-        String name = "金";
+        String name = "test";
         try {
             byte[] nameCompress = GzipUtil.compress(name.getBytes());
             byte[] nameDecompress = GzipUtil.decompress(nameCompress);

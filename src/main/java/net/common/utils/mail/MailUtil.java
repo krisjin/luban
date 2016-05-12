@@ -12,7 +12,7 @@ import java.util.Properties;
 /**
  * 邮件工具类
  *
- * @author krisjin (mailto:krisjin86@163.com)
+ * @author shijingui
  * @date 2014-5-23下午4:16:22
  */
 
@@ -33,7 +33,7 @@ public final class MailUtil {
         props.put(MAIL_AUTH_PROP, info.isAuth());
         Authenticator auth = null;
         if (info.isAuth()) {
-            auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
+            auth = new MailAuthenticator(info.getUsername(), info.getPassword());
         }
 
         Session session = Session.getDefaultInstance(props, auth);
@@ -70,7 +70,7 @@ public final class MailUtil {
 
         Authenticator auth = null;
         if (info.isAuth()) {
-            auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
+            auth = new MailAuthenticator(info.getUsername(), info.getPassword());
         }
         Session session = Session.getDefaultInstance(props, auth);
 
@@ -111,7 +111,7 @@ public final class MailUtil {
 
         Authenticator auth = null;
         if (info.isAuth()) {
-            auth = new EmailAuthenticator(info.getUsername(), info.getPassword());
+            auth = new MailAuthenticator(info.getUsername(), info.getPassword());
         }
         Session session = Session.getDefaultInstance(props, auth);
         Message msg = new MimeMessage(session);

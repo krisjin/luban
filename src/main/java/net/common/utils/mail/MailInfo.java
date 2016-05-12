@@ -3,7 +3,7 @@ package net.common.utils.mail;
 /**
  * 邮箱信息
  *
- * @author krisjin (mailto:krisjin86@163.com)
+ * @author shijingui
  * @date 2014-5-23下午4:25:02
  */
 

@@ -13,7 +13,7 @@ public class MailTest {
         info.setMailTo("jinguishi@tianler.com");
         info.setMailSubject("带人的艺术与-Kindle版");
         info.setUsername("krisibm@163.com");
-        info.setPassword("guidao!@#");
+        info.setPassword("");
         info.setMailServerHost("smtp.163.com");
         info.setIsAuth(true);
         info.setMailName("NIHO,中午好!");
