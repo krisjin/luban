@@ -29,7 +29,7 @@ public final class MailUtil {
      */
     public static void sendTextMail(MailInfo info) throws Exception {
         Properties props = new Properties();
-        props.put(MAIL_HOST_PROP, info.getMailServerHost());
+        props.put(MAIL_HOST_PROP, info.getServerHost());
         props.put(MAIL_AUTH_PROP, info.isAuth());
         Authenticator auth = null;
         if (info.isAuth()) {
@@ -40,10 +40,10 @@ public final class MailUtil {
 
         MimeMessage message = new MimeMessage(session);
         message.setSentDate(new Date());
-        Address address = new InternetAddress(info.getMailFrom(), info.getMailName());
+        Address address = new InternetAddress(info.getFrom(), info.getMailName());
         message.setFrom(address);
 
-        String mailTo = info.getMailTo();
+        String mailTo = info.getTo();
         String[] mailsTo = mailTo.split(",");
 
         InternetAddress[] mailToAddress = new InternetAddress[mailsTo.length];
@@ -51,7 +51,7 @@ public final class MailUtil {
             mailToAddress[i] = new InternetAddress(mailsTo[i]);
         }
         message.setRecipients(Message.RecipientType.TO, mailToAddress);
-        message.setSubject(info.getMailSubject());
+        message.setSubject(info.getSubject());
         message.setText(info.getBody());
         Transport.send(message);
     }
@@ -65,7 +65,7 @@ public final class MailUtil {
     public static void sendHtmlEmail(MailInfo info) throws Exception {
 
         Properties props = new Properties();
-        props.put(MAIL_HOST_PROP, info.getMailServerHost());
+        props.put(MAIL_HOST_PROP, info.getServerHost());
         props.put(MAIL_AUTH_PROP, info.isAuth());
 
         Authenticator auth = null;
@@ -79,18 +79,18 @@ public final class MailUtil {
 
         MimeMessage message = new MimeMessage(session);
         message.setSentDate(new Date());
-        Address address = new InternetAddress(info.getMailFrom(), info.getUsername());
+        Address address = new InternetAddress(info.getFrom(), info.getUsername());
         message.setFrom(address);
 
-        String mailTo = info.getMailTo();
+        String mailTo = info.getTo();
         String[] mailsTo = mailTo.split(",");
         InternetAddress[] mailToAddress = new InternetAddress[mailsTo.length];
         for (int i = 0; i < mailsTo.length; i++) {
             mailToAddress[i] = new InternetAddress(mailsTo[i]);
         }
         message.setRecipients(Message.RecipientType.TO, mailToAddress);
-        message.setSubject(info.getMailSubject());
-        html.setContent(info.getHtmlBody(), "text/html; charset=utf-8");
+        message.setSubject(info.getSubject());
+        html.setContent(info.getBody(), "text/html; charset=utf-8");
 
         multipart.addBodyPart(html);
         message.setContent(multipart);
@@ -106,7 +106,7 @@ public final class MailUtil {
      */
     public static void sendAttachEmail(MailInfo info, String[] filePath) throws Exception {
         Properties props = new Properties();
-        props.put(MAIL_HOST_PROP, info.getMailServerHost());
+        props.put(MAIL_HOST_PROP, info.getServerHost());
         props.put(MAIL_AUTH_PROP, info.isAuth());
 
         Authenticator auth = null;
@@ -116,10 +116,10 @@ public final class MailUtil {
         Session session = Session.getDefaultInstance(props, auth);
         Message msg = new MimeMessage(session);
         msg.setSentDate(new Date());
-        msg.setFrom(new InternetAddress(info.getMailFrom(), info.getUsername()));
-        msg.setSubject(info.getMailSubject());
+        msg.setFrom(new InternetAddress(info.getFrom(), info.getUsername()));
+        msg.setSubject(info.getSubject());
 
-        String[] mailsTo = info.getMailTo().split(",");
+        String[] mailsTo = info.getTo().split(",");
         InternetAddress[] mailToAddress = new InternetAddress[mailsTo.length];
         for (int i = 0; i < mailsTo.length; i++) {
             mailToAddress[i] = new InternetAddress(mailsTo[i]);
@@ -127,7 +127,7 @@ public final class MailUtil {
         msg.setRecipients(Message.RecipientType.TO, mailToAddress);
         Multipart multipart = new MimeMultipart();
         BodyPart body = new MimeBodyPart();
-        body.setContent(info.getHtmlBody(), "text/html; charset=utf-8");
+        body.setContent(info.getBody(), "text/html; charset=utf-8");
         multipart.addBodyPart(body);
 
         for (int i = 0; i < filePath.length; i++) {

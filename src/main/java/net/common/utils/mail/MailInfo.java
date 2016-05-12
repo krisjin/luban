@@ -13,23 +13,21 @@ public class MailInfo {
 
     private String password;
 
-    private String mailFrom;
+    private String from;
 
-    private String mailTo;
+    private String to;
 
-    private String mailSubject;
+    private String subject;
 
     private String body;
 
-    private String mailServerHost = "smtp.163.com";
-
-    private String htmlBody;
+    private String serverHost = "smtp.163.com";
 
     private String mailName;
 
     private boolean isAuth = true;
 
-    private int mailPort;
+    private int port;
 
     public String getUsername() {
         return username;
@@ -47,28 +45,28 @@ public class MailInfo {
         this.password = password;
     }
 
-    public String getMailFrom() {
-        return mailFrom;
+    public String getFrom() {
+        return from;
     }
 
-    public void setMailFrom(String mailFrom) {
-        this.mailFrom = mailFrom;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
-    public String getMailTo() {
-        return mailTo;
+    public String getTo() {
+        return to;
     }
 
-    public void setMailTo(String mailTo) {
-        this.mailTo = mailTo;
+    public void setTo(String to) {
+        this.to = to;
     }
 
-    public String getMailSubject() {
-        return mailSubject;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setMailSubject(String mailSubject) {
-        this.mailSubject = mailSubject;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getBody() {
@@ -79,22 +77,13 @@ public class MailInfo {
         this.body = body;
     }
 
-    public String getMailServerHost() {
-        return mailServerHost;
+    public String getServerHost() {
+        return serverHost;
     }
 
-    public void setMailServerHost(String mailServerHost) {
-        this.mailServerHost = mailServerHost;
+    public void setServerHost(String serverHost) {
+        this.serverHost = serverHost;
     }
-
-    public String getHtmlBody() {
-        return htmlBody;
-    }
-
-    public void setHtmlBody(String htmlBody) {
-        this.htmlBody = htmlBody;
-    }
-
 
     public String getMailName() {
         return mailName;
@@ -112,12 +101,12 @@ public class MailInfo {
         this.isAuth = isAuth;
     }
 
-    public int getMailPort() {
-        return mailPort;
+    public int getPort() {
+        return port;
     }
 
-    public void setMailPort(int mailPort) {
-        this.mailPort = mailPort;
+    public void setPort(int port) {
+        this.port = port;
     }
 }
 
