@@ -1,7 +1,9 @@
 package net.common.utils;
 
 import net.common.utils.encrypt.UuidUtil;
-import org.junit.Test;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * <p/>
@@ -9,11 +11,23 @@ import org.junit.Test;
  * Date: 2015/9/1
  * Time: 15:11
  */
-public class UUIDTest {
+public class UUIDTest implements Runnable {
 
-    @Test
-    public void test() {
-        String uuid = UuidUtil.genTerseUuid();
-        System.out.println("UUID:" + uuid + "\nLen:" + uuid.length());
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 6; i++) {
+            executorService.execute(new UUIDTest());
+        }
+    }
+
+    private void printUuid() {
+        System.out.println(UuidUtil.genTerseUuid());
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            printUuid();
+        }
     }
 }

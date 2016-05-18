@@ -1,6 +1,8 @@
 package net.common.utils.mail;
 
 
+import com.google.common.base.Strings;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -31,10 +33,7 @@ public final class MailUtil {
         Properties props = new Properties();
         props.put(MAIL_HOST_PROP, info.getServerHost());
         props.put(MAIL_AUTH_PROP, info.isAuth());
-        Authenticator auth = null;
-        if (info.isAuth()) {
-            auth = new MailAuthenticator(info.getUsername(), info.getPassword());
-        }
+        Authenticator auth = getAuthenticator(info);
 
         Session session = Session.getDefaultInstance(props, auth);
 
@@ -68,10 +67,7 @@ public final class MailUtil {
         props.put(MAIL_HOST_PROP, info.getServerHost());
         props.put(MAIL_AUTH_PROP, info.isAuth());
 
-        Authenticator auth = null;
-        if (info.isAuth()) {
-            auth = new MailAuthenticator(info.getUsername(), info.getPassword());
-        }
+        Authenticator auth = getAuthenticator(info);
         Session session = Session.getDefaultInstance(props, auth);
 
         Multipart multipart = new MimeMultipart();
@@ -148,4 +144,13 @@ public final class MailUtil {
         Transport.send(msg);
     }
 
+    private static Authenticator getAuthenticator(MailInfo mailInfo) {
+        if (mailInfo == null)
+            throw new NullPointerException("Mail info is null");
+        if (Strings.isNullOrEmpty(mailInfo.getUsername()) || Strings.isNullOrEmpty(mailInfo.getPassword()))
+            throw new IllegalArgumentException("Mail username or password is null");
+
+        Authenticator authenticator = new MailAuthenticator(mailInfo.getUsername(), mailInfo.getPassword());
+        return authenticator;
+    }
 }
