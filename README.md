@@ -1,4 +1,4 @@
-## 应用开发基础库
+## 统一的基础设施服务（Unified infrastructure services）
 
 ## 构件功能介绍
 

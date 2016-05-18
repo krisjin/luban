@@ -2,11 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.common.base</groupId>
-    <artifactId>common-base</artifactId>
+    <groupId>org.uis</groupId>
+    <artifactId>uis</artifactId>
     <version>0.0.1-REALEASE</version>
-    <packaging>jar</packaging>
-    <name>common-base</name>
+    <modules>
+        <module>uis-common</module>
+    </modules>
+    <packaging>pom</packaging>
+    <name>uis</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
