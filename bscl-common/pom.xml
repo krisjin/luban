@@ -1,16 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>uis</artifactId>
-        <groupId>org.uis</groupId>
+        <groupId>org.bscl</groupId>
+        <artifactId>bscl</artifactId>
         <version>0.0.1-REALEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>uis-common</artifactId>
+    <artifactId>bscl-common</artifactId>
     <packaging>jar</packaging>
-
-    <name>uis-common</name>
+    <name>bscl-common</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -18,11 +17,5 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 </project>
