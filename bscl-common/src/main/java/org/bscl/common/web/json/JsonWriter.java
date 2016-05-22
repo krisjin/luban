@@ -5,7 +5,7 @@ package org.bscl.common.web.json;
  * User: shijingui
  * Date: 2015/12/18
  */
-public class JsonWrite {
+public class JsonWriter {
 
     /**
      * 提示信息
@@ -20,15 +20,15 @@ public class JsonWrite {
      */
     private Object data;
 
-    public JsonWrite() {
+    public JsonWriter() {
 
     }
 
-    public JsonWrite(Object data) {
+    public JsonWriter(Object data) {
         this.data = data;
     }
 
-    public JsonWrite(Object data, String msg) {
+    public JsonWriter(Object data, String msg) {
         this.msg = msg;
     }
 
