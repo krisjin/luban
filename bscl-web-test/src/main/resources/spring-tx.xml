@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+       default-lazy-init="false">
+
+   <!-- Spring 基于数据源的事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 多数据源事物管理 -->
+    <bean id="chainedTransactionManager" class="org.springframework.data.transaction.ChainedTransactionManager">
+       <constructor-arg>
+           <list>
+               <ref local="transactionManager"/>
+           </list>
+       </constructor-arg>
+    </bean>
+
+    <!-- 启用annotation的事务支持  -->
+    <tx:annotation-driven transaction-manager="chainedTransactionManager"  proxy-target-class="true" />
+
+</beans>
