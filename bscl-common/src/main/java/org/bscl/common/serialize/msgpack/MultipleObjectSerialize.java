@@ -18,11 +18,11 @@ public class MultipleObjectSerialize {
     public static void main(String[] args) throws IOException {
         Order order = new Order();
         order.id = 1L;
-        order.name = "运动鞋";
+        order.name = "ss";
 
         Order order1 = new Order();
         order1.id = 2L;
-        order1.name = "羽绒服";
+        order1.name = "ss";
 
         MessagePack messagePack = new MessagePack();
         //序列化
@@ -31,7 +31,7 @@ public class MultipleObjectSerialize {
         packer.write(order);
         packer.write(order1);
         byte[] raw = byteArrayOutputStream.toByteArray();
-        System.out.println("序列化后字节大小：" + raw.length);
+//        System.out.println("ss：" + raw.length);
         //反序列化
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(raw);
         Unpacker unpacker = messagePack.createUnpacker(byteArrayInputStream);

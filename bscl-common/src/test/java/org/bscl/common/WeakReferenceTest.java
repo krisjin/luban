@@ -6,10 +6,7 @@ import org.junit.Test;
 import java.lang.ref.WeakReference;
 
 /**
- *
- *
- * <p/>
- * User : krisibm@163.com
+ * User : shijingui
  * Date: 2015/9/2
  * Time: 10:26
  */
@@ -20,15 +17,11 @@ public class WeakReferenceTest {
      */
     @Test
     public void test() {
-
         Car car = new Car("Audi", 380000d, "Golden");
         WeakReference<Car> weakReference = new WeakReference<Car>(car);
-
         int i = 0;
         while (true) {
-
 //            System.out.println("在这里做强引用的使用" + car);
-
             if (weakReference.get() != null) {
                 i++;
                 System.out.println("对象是存活状态，循环了" + i + "次--" + weakReference);
@@ -40,7 +33,7 @@ public class WeakReferenceTest {
     }
 
 
-    //    @Test
+    @Test
     public void test2() {
         Car car = new Car("Audi", 380000d, "Golden");
         int i = 0;
@@ -55,6 +48,5 @@ public class WeakReferenceTest {
             }
         }
     }
-
 
 }
