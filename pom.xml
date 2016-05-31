@@ -7,7 +7,6 @@
     <version>0.0.1-REALEASE</version>
     <modules>
         <module>bscl-common</module>
-        <module>bscl-web-test</module>
     </modules>
     <packaging>pom</packaging>
     <name>bscl</name>
