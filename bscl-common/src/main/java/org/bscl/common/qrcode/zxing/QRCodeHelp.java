@@ -23,7 +23,7 @@ public class QRCodeHelp {
      * @throws WriterException
      */
     public static boolean generate(String content, File file) throws IOException, WriterException {
-        return MatrixToImageOperate.writeToFile(content, file);
+        return MatrixImageOperate.writeToFile(content, file);
     }
 
     /**
@@ -36,7 +36,7 @@ public class QRCodeHelp {
      * @throws WriterException
      */
     public static boolean generate(String content, OutputStream outputStream) throws IOException, WriterException {
-        return MatrixToImageOperate.writeToOutputStream(content, outputStream);
+        return MatrixImageOperate.writeToOutputStream(content, outputStream);
     }
 
     /**
@@ -48,7 +48,7 @@ public class QRCodeHelp {
      * @throws WriterException
      */
     public static InputStream generate(String content) throws IOException, WriterException {
-        return MatrixToImageOperate.writeToInputStream(content);
+        return MatrixImageOperate.writeToInputStream(content);
     }
 
 

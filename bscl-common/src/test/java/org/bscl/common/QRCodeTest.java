@@ -3,13 +3,11 @@ package org.bscl.common;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
-import org.bscl.common.qrcode.zxing.MatrixToImageOperate;
+import org.bscl.common.qrcode.zxing.QRCodeHelp;
 import org.junit.Test;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.Hashtable;
 
 /**
@@ -32,9 +30,7 @@ public class QRCodeTest {
         BitMatrix bitMatrix = null;
 
 
-        File outputFile = new File("d:" + File.separator + "url.jpg");
-        MatrixToImageOperate.writeToFile(text, outputFile);
-        OutputStream os = new FileOutputStream("d:/cc.png");
-        MatrixToImageOperate.writeToOutputStream(text, os);
+        File outputFile = new File("d:" + File.separator + "url2222222222.jpg");
+        QRCodeHelp.generate(text, outputFile);
     }
 }

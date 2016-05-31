@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.Hashtable;
 
 
-public class MatrixToImageOperate {
+public class MatrixImageOperate {
     private static final int BLACK = 0xFF000000;
     private static final int WHITE = 0xFFFFFFFF;
     private static final String DEFAULT_IMAGE_FORMAT = "png";
@@ -20,9 +20,11 @@ public class MatrixToImageOperate {
     private static final int QR_CODE_HEIGHT = 300;
     private static final Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
 
-    private MatrixToImageOperate() {
+    private MatrixImageOperate() {
         hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
     }
+
+
 
     private static BufferedImage toBufferedImage(BitMatrix matrix) {
         int width = matrix.getWidth();
@@ -68,6 +70,10 @@ public class MatrixToImageOperate {
     private static BitMatrix getBitMatrix(String content) throws WriterException {
         BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, QR_CODE_WIDTH, QR_CODE_HEIGHT, hints);
         return bitMatrix;
+    }
+
+    private void setEncodeTypeHits(Hashtable<EncodeHintType, String> hits) {
+        hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
     }
 
 }
