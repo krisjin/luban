@@ -3,6 +3,7 @@ package org.bscl.common;
 import org.bscl.common.date.DateUtil;
 import org.junit.Test;
 
+import java.awt.*;
 import java.util.Date;
 
 /**
@@ -31,5 +32,10 @@ public class DateTest {
         System.out.println(date1);
         Date date2 = DateUtil.getCurrentDayEndTime();
         System.out.println(date2);
+
+        System.out.println(DateUtil.formatBeforeDate(new Date()));
+
+
+
     }
 }

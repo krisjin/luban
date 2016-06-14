@@ -75,7 +75,7 @@ public final class MailUtil {
 
         MimeMessage message = new MimeMessage(session);
         message.setSentDate(new Date());
-        Address address = new InternetAddress(info.getFrom(), info.getUsername());
+        Address address = new InternetAddress(info.getFrom(), info.getMailName());
         message.setFrom(address);
 
         String mailTo = info.getTo();
