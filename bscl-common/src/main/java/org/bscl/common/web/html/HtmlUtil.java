@@ -10,32 +10,14 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Utility class for HTML escaping. Escapes and unescapes
- * based on the W3C HTML 4.01 recommendation, handling
- * character entity references.
- * <p/>
- * <p>Reference:
- * <a href="http://www.w3.org/TR/html4/charset.html">http://www.w3.org/TR/html4/charset.html</a>
- * <p/>
- * <p>For a comprehensive set of String escaping utilities,
- * consider Jakarta Commons Lang and its StringEscapeUtils class.
- * We are not using that class here to avoid a runtime dependency
- * on Commons Lang just for HTML escaping. Furthermore, Spring's
- * HTML escaping is more flexible and 100% HTML 4.0 compliant.
- *
- * @author Juergen Hoeller
- * @author Martin Kersten
- * @see org.apache.commons.lang.StringEscapeUtils
- * @since 01.03.2003
- */
-public class HtmlUtils {
+
+public class HtmlUtil {
 
     private static final String REGULAR_HTML_TAG = "<([^>]*)>";
     private static final String REGULAR_SRCATR_VALUE = "<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>";
 
-    private HtmlUtils() {
-    }
+//    private HtmlUtil() {
+//    }
 
     /**
      * Shared instance of pre-parsed HTML character entity references.
@@ -239,7 +221,7 @@ public class HtmlUtils {
     }
 
     public static String interceptLen(String str, int len) {
-        str = str.trim();
+        str = removeAllHtmlTag(str);
         int byteLen = 0;
         if (Strings.isNullOrEmpty(str))
             return "";

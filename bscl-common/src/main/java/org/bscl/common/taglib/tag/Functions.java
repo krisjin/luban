@@ -1,7 +1,7 @@
 package org.bscl.common.taglib.tag;
 
 import com.google.common.base.Strings;
-import org.bscl.common.web.html.HtmlUtils;
+import org.bscl.common.web.html.HtmlUtil;
 import org.bscl.common.web.html.JavaScriptUtils;
 import org.owasp.esapi.ESAPI;
 
@@ -37,7 +37,7 @@ public final class Functions {
         if (Strings.isNullOrEmpty(html)) {
             return html;
         }
-        return HtmlUtils.htmlEscape(html);
+        return HtmlUtil.htmlEscape(html);
     }
 
     /**

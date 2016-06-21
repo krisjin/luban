@@ -21,7 +21,7 @@ import java.util.Properties;
  */
 class HtmlCharacterEntityReferences {
 
-	private static final String PROPERTIES_FILE = "HtmlCharacterEntityReferences.properties";
+	private static final String PROPERTIES_FILE = "/HtmlCharacterEntityReferences.properties";
 
 	static final char REFERENCE_START = '&';
 
