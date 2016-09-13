@@ -10,10 +10,6 @@ import java.util.regex.Pattern;
 
 /**
  * Mac工具.
- * <p/>
- * User: xiaoqing.hu@mail-inc.com
- * Date: 12-8-27
- * Time: 上午10:40
  */
 public final class MacUtil {
 

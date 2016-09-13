@@ -9,7 +9,6 @@ package org.bscl.common.codec;
  */
 public class BitUtil {
 
-
     /**
      * 是否偶数,为0就是偶数
      *
