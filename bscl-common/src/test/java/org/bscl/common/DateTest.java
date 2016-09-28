@@ -3,7 +3,7 @@ package org.bscl.common;
 import org.bscl.common.date.DateUtil;
 import org.junit.Test;
 
-import java.awt.*;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -35,7 +35,23 @@ public class DateTest {
 
         System.out.println(DateUtil.formatBeforeDate(new Date()));
 
+        Date date3 = DateUtil.getDate(0);
+        System.out.println(date3);
+
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE, -4);
+        System.out.println(c.getTime());
 
 
+        Calendar c3 = Calendar.getInstance();
+        c3.add(Calendar.DATE, -3);
+        Date d3 = new Date();
+        boolean isBefore = c.getTime().before(c3.getTime());
+        System.out.println(isBefore);
+        boolean b1 = false, b2 = false, b3 = true;
+
+        if (b1 || b2 || b3) {
+            System.out.println("ddd");
+        }
     }
 }
