@@ -22,5 +22,7 @@ public class DesTest extends TestCase {
 
         System.out.println(ciphertext.length());
         System.out.println(plainText);
+
+
     }
 }
