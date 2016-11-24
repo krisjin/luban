@@ -14,6 +14,9 @@ public class Car {
 
     private String brand;
 
+    public Car() {
+    }
+
     public Car(String brand, double price, String color) {
         this.brand = brand;
         this.price = price;

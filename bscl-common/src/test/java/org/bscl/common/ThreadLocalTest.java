@@ -1,5 +1,6 @@
 package org.bscl.common;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -36,6 +37,9 @@ public class ThreadLocalTest {
 
     public static void setConnection(Connection conn) {
         connectionHolder.set(conn);
+    }
+
+    public static void main(String[] args) {
     }
 }
 

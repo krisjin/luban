@@ -165,10 +165,10 @@ public class NetUtil {
             port = Constants.DEFAULT_SERVER_PORT;
         }
         for (int i = port; i <= MAX_PORT; i++) {
-            ServerSocket ss = null;
+            ServerSocket serverSocket = null;
             try {
-                ss = new ServerSocket();
-                ss.bind(new InetSocketAddress(host, i));
+                serverSocket = new ServerSocket();
+                serverSocket.bind(new InetSocketAddress(host, i));
                 logger.debug("ip:{} port:{} is available", host, i);
                 return i;
             } catch (IOException e) {
@@ -179,10 +179,11 @@ public class NetUtil {
                         "3) The host is wrong.", host, i);
                 logger.info("Begin try next port(auto +1):{}", i + 1);
             } finally {
-                if (ss != null) {
+                if (serverSocket != null) {
                     try {
-                        ss.close();
+                        serverSocket.close();
                     } catch (IOException e) {
+                        logger.error("ServerSocket close error...");
                     }
                 }
             }
