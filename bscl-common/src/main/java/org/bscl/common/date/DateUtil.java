@@ -46,6 +46,10 @@ public final class DateUtil {
     public static final String DATETIME_STAMP = "yyyy-MM-dd HH:mm";
     public static final String DATEHOUR_STR = "yyyy-MM-dd HH";
     public static final int RATE_MILLIS_TO_SECONDS = 1000;
+    public static final String ONE_SEASON_LAST_MONTH = "03";
+    public static final String TWO_SEASON_LAST_MONTH = "06";
+    public static final String THREE_SEASON_LAST_MONTH = "09";
+    public static final String FOUR_SEASON_LAST_MONTH = "12";
     /**
      * 每年第一周的最小天数
      */
@@ -70,7 +74,7 @@ public final class DateUtil {
      *
      * @return
      */
-    public static final String getDateStr() {
+    public static String getCurrentDateStr() {
         return DateFormatUtils.ISO_DATE_FORMAT.format(new Date());
     }
 
@@ -80,15 +84,15 @@ public final class DateUtil {
      *
      * @return
      */
-    public static final String getDateTimeStr() {
+    public static String getCurrentDateTimeStr() {
         return DateFormatUtils.format(new Date(), DATETIME_STR);
     }
 
     /**
-     * 获取日期
-     * 说明: n=0为当日, 1为明天, -1为昨天
+     * 获取指定日期
+     * 说明: n=0为当天, 1为明天, -1为昨天
      */
-    public static final Date getDate(int n) {
+    public static Date getDate(int n) {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, n);
         Date date = calendar.getTime();
@@ -109,16 +113,19 @@ public final class DateUtil {
      *
      * @return
      */
-    public static final String formatDate(Date date) {
+    public static String formatDate(Date date) {
         return DateFormatUtils.ISO_DATE_FORMAT.format(date);
     }
+
 
     /**
      * 格式化当前日期
      *
+     * @param date    日期
+     * @param pattern 格式
      * @return
      */
-    public static final String formatDate(Date date, String pattern) {
+    public static String formatDate(Date date, String pattern) {
         return DateFormatUtils.format(date, pattern);
     }
 
@@ -129,7 +136,7 @@ public final class DateUtil {
      * @param pattern
      * @return
      */
-    public static final Date parseDate(String dateStr, String pattern) {
+    public static Date parseDate(String dateStr, String pattern) {
         try {
             return DateUtils.parseDate(dateStr, new String[]{pattern});
         } catch (ParseException e) {
@@ -167,12 +174,63 @@ public final class DateUtil {
      */
     public static final Date getLastDayOfMonth() {
         Calendar calendar = Calendar.getInstance();
+
         int lastDayNum = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
         calendar.set(Calendar.DAY_OF_MONTH, lastDayNum);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         return calendar.getTime();
+    }
+
+    /**
+     * 指定的格式为yyyy-MM 2016-11
+     *
+     * @param date
+     * @return
+     */
+    public static String getMaxDayOfYearMonth(String date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
+        try {
+            Date d = sdf.parse(date);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(d);
+            int lastDayNum = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+            date = date + "-" + lastDayNum;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+    /**
+     * @param season 2016.1  格式为年份.季度
+     * @return
+     */
+    public static String getMaxDayOfSeason(String season) {
+        String[] seasons = season.split("\\.");
+        int year = Integer.valueOf(seasons[0]);
+        int s = Integer.valueOf(seasons[1]);
+        String month;
+        switch (s) {
+            case 1:
+                month = ONE_SEASON_LAST_MONTH;
+                break;
+            case 2:
+                month = TWO_SEASON_LAST_MONTH;
+                break;
+            case 3:
+                month = THREE_SEASON_LAST_MONTH;
+                break;
+            case 4:
+                month = FOUR_SEASON_LAST_MONTH;
+                break;
+            default:
+                month = ONE_SEASON_LAST_MONTH;
+                break;
+        }
+        String date = year + "-" + month;
+        return getMaxDayOfYearMonth(date);
     }
 
     /**
@@ -587,7 +645,6 @@ public final class DateUtil {
          * @return
          */
         public static XMLGregorianCalendar convertToXMLGregorianCalendar(Date date) {
-
             GregorianCalendar cal = new GregorianCalendar();
             cal.setTime(date);
             XMLGregorianCalendar gc = null;

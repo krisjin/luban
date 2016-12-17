@@ -20,7 +20,7 @@ public class DateTest {
         Date date = DateUtil.parseDate("20150810145612", "yyyyMMddHHmmss");
 
         String dateStr = DateUtil.formatDate(date, "yyyy-MM-dd");
-        String currentDate = DateUtil.getDateTimeStr();
+        String currentDate = DateUtil.getCurrentDateTimeStr();
         System.out.println(date);
         System.out.println(dateStr);
         System.out.println(currentDate);
@@ -53,5 +53,13 @@ public class DateTest {
         if (b1 || b2 || b3) {
             System.out.println("ddd");
         }
+
+
+        String ddd = "2016-1";
+        System.out.println(DateUtil.getMaxDayOfYearMonth(ddd));
+
+        String season = "2016.1";
+        System.out.println(DateUtil.getMaxDayOfSeason(season));
+
     }
 }
