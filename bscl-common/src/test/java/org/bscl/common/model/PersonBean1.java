@@ -15,6 +15,7 @@ public class PersonBean1 {
     private String favorit;
 
     private String address;
+    private Car car;
 
     public String getUsername() {
         return username;
@@ -54,5 +55,13 @@ public class PersonBean1 {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 }

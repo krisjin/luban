@@ -39,7 +39,6 @@ public class Excel {
 
 
     public Excel(String outputPath, ExcelType excelType, String[] sheetNames) {
-
         if (outputPath == null || outputPath.equals(""))
             throw new IllegalArgumentException("excel cannot without a output path");
 

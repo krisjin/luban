@@ -34,7 +34,7 @@ public class CsvExportUtil {
             csvFileOutputStream.newLine();
 
             // 写入文件内容
-            addContenRows(list, csvFileOutputStream, properties);
+            addContentRows(list, csvFileOutputStream, properties);
 
             csvFileOutputStream.flush();
         } catch (Exception e) {
@@ -54,7 +54,7 @@ public class CsvExportUtil {
             // GB2312使正确读取分隔符","
             csvFileOutputStream = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(tmpFile, true), "GB2312"), 1024);
             // 写入文件内容
-            addContenRows(list, csvFileOutputStream, properties);
+            addContentRows(list, csvFileOutputStream, properties);
             csvFileOutputStream.flush();
         } catch (Exception e) {
             log.error("订单导出失败", e);
@@ -68,18 +68,16 @@ public class CsvExportUtil {
     }
 
 
-    private static <T> void addContenRows(List<T> list, BufferedWriter csvFileOutputStream, String[] properties) {
+    private static <T> void addContentRows(List<T> list, BufferedWriter csvFileOutputStream, String[] properties) {
         if (!CollectionUtils.isEmpty(list)) {
             try {
                 //实体类处理
                 for (int i = 0; i < list.size(); i++) {
                     T data = list.get(i);
                     for (int j = 0; j < properties.length; j++) {
-                        PropertyDescriptor pd = new PropertyDescriptor(properties[j],
-                                data.getClass());
+                        PropertyDescriptor pd = new PropertyDescriptor(properties[j], data.getClass());
                         Method getMethod = pd.getReadMethod();//获得get方法
-                        Object field = getMethod.invoke(data);//
-                        //判断值是否为空
+                        Object field = getMethod.invoke(data);
                         if (null == field) {
                             field = "";
                         } else if (field instanceof Date) {
@@ -145,6 +143,7 @@ public class CsvExportUtil {
         try {
             response.setHeader("Content-Disposition", "attachment;filename=".concat(new String(fileName.getBytes("GBK"), "iso8859-1")));
         } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
         response.setHeader("Connection", "close");
         response.setHeader("Content-Type", "application/csv");
