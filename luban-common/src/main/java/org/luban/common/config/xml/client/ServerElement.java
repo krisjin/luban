@@ -8,7 +8,6 @@ package org.luban.common.config.xml.client;
 
 
 import com.google.common.collect.Maps;
-import org.bscl.common.config.xml.common.XmlPropertyElement;
 import org.luban.common.config.xml.common.XmlPropertyElement;
 
 import javax.xml.bind.annotation.*;
@@ -23,8 +22,8 @@ import java.util.Map;
 @XmlRootElement(name = "server")
 public class ServerElement {
 
-	@XmlAttribute(name="name",required = true)
-	private String name = "";
+    @XmlAttribute(name = "name", required = true)
+    private String name = "";
     @XmlJavaTypeAdapter(XmlPropertyElement.MapAdapter.class)
     private Map<String, String> properties = Maps.newHashMap();
 
@@ -35,6 +34,7 @@ public class ServerElement {
     public void setProperties(Map<String, String> properties) {
         this.properties = properties;
     }
+
     public String getName() {
         return name;
     }

@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.web.html.HtmlUtil;
+import org.luban.common.web.html.HtmlUtil;
 import org.junit.Test;
 import org.luban.common.web.html.HtmlUtil;
 

@@ -3,7 +3,6 @@ package org.luban.common.config.xml.client;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import org.bscl.common.config.xml.common.XmlPropertyElement;
 import org.luban.common.config.xml.common.XmlPropertyElement;
 
 import javax.xml.bind.annotation.XmlAccessType;

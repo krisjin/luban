@@ -1,7 +1,7 @@
 package org.luban.common;
 
-import org.bscl.common.mail.MailInfo;
-import org.bscl.common.mail.MailUtil;
+import org.luban.common.mail.MailInfo;
+import org.luban.common.mail.MailUtil;
 import org.junit.Test;
 import org.luban.common.mail.MailInfo;
 import org.luban.common.mail.MailUtil;

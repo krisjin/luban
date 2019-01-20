@@ -2,7 +2,7 @@ package org.luban.common.config.xml.client;
 
 
 import com.google.common.collect.Maps;
-import org.bscl.common.config.xml.common.XmlPropertyElement;
+import org.luban.common.config.xml.common.XmlPropertyElement;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;

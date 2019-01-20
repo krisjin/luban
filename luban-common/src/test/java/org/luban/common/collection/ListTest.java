@@ -1,6 +1,6 @@
 package org.luban.common.collection;
 
-import org.bscl.common.encrypt.Base64Util;
+import org.luban.common.encrypt.Base64Util;
 import org.junit.Test;
 
 import java.io.*;

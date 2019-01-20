@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.io.GzipUtil;
+import org.luban.common.io.GzipUtil;
 import org.junit.Test;
 
 import java.io.IOException;

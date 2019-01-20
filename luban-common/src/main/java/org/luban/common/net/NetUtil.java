@@ -1,7 +1,6 @@
 package org.luban.common.net;
 
 import org.apache.commons.lang.StringUtils;
-import org.bscl.common.Constants;
 import org.luban.common.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

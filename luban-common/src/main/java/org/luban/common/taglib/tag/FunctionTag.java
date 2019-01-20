@@ -1,6 +1,5 @@
 package org.luban.common.taglib.tag;
 
-import org.bscl.common.money.MoneyUtil;
 import org.luban.common.money.MoneyUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

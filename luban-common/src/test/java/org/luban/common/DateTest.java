@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.date.DateUtil;
+import org.luban.common.date.DateUtil;
 import org.junit.Test;
 import org.luban.common.date.DateUtil;
 

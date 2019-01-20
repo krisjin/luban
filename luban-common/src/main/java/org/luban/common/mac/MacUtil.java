@@ -2,7 +2,6 @@ package org.luban.common.mac;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
-import org.bscl.common.enums.SdkTypeEnum;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang.StringUtils;
 import org.luban.common.enums.SdkTypeEnum;

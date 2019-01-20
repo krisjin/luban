@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.config.XmlProp;
+import org.luban.common.config.XmlProp;
 import org.luban.common.config.XmlProp;
 
 import java.util.Map;

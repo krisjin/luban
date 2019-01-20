@@ -3,7 +3,6 @@ package org.luban.common.encrypt.uuid;
 import java.security.SecureRandom;
 
 /**
- *
  * RandomUuidFactory is a {@linkplain UuidFactory UuidFactory} that generates
  * random UUIDs. This implementation uses the JDK's java.security.SecureRandom
  * to generate sufficiently random values for the UUIDs.
@@ -12,7 +11,6 @@ import java.security.SecureRandom;
  * getInstance() method.
  *
  * @author Dan Jemiolo (danj)
- *
  */
 public class RandomUuidFactory {
     private static final RandomUuidFactory _SINGLETON = new RandomUuidFactory();

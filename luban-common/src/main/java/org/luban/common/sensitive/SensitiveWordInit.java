@@ -1,6 +1,5 @@
 package org.luban.common.sensitive;
 
-import org.bscl.common.encrypt.Base64Util;
 import org.luban.common.encrypt.Base64Util;
 
 import java.io.BufferedReader;

@@ -1,11 +1,11 @@
 package org.luban.common.web.escapehtml;
 
-import org.bscl.common.taglib.tag.Functions;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonGenerator;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.SerializerProvider;
 import org.codehaus.jackson.map.ser.std.NonTypedScalarSerializerBase;
+import org.luban.common.taglib.tag.Functions;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

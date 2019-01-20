@@ -9,7 +9,7 @@ public final class ZookeeperConstants {
      */
     public static final int CONNECTION_TIMEOUT = 10 * 1000;
 
-    private ZookeeperConstants(){
+    private ZookeeperConstants() {
 
     }
 }

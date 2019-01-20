@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.enums.ProcessStatus;
+import org.luban.common.enums.ProcessStatus;
 import org.junit.Test;
 
 /**

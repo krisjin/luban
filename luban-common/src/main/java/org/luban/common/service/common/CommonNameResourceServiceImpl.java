@@ -3,7 +3,7 @@ package org.luban.common.service.common;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import org.bscl.common.service.INameResourceService;
+import org.luban.common.service.INameResourceService;
 
 /**
  * 提供了通用的池，与继承了ServiceLoader的类联合使用

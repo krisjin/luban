@@ -1,7 +1,7 @@
 package org.luban.common.taglib.model;
 
 
-import org.bscl.common.taglib.ResourceType;
+import org.luban.common.taglib.ResourceType;
 
 /**
  * 用于加载的资源

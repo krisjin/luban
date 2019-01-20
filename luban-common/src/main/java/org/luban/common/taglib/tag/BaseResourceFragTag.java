@@ -1,8 +1,7 @@
 package org.luban.common.taglib.tag;
 
 
-import org.bscl.common.taglib.ResourceType;
-import org.bscl.common.taglib.model.LoadPoint;
+import org.luban.common.taglib.ResourceType;
 import org.luban.common.taglib.model.LoadPoint;
 
 import javax.servlet.jsp.JspException;

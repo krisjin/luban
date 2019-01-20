@@ -1,6 +1,5 @@
 package org.luban.common.mq;
 
-import org.bscl.common.mq.message.IQueueMessage;
 import org.luban.common.mq.message.IQueueMessage;
 
 /**

@@ -1,7 +1,7 @@
 package org.luban.common;
 
 import junit.framework.TestCase;
-import org.bscl.common.encrypt.DesEncrypterUtil;
+import org.luban.common.encrypt.DesEncrypterUtil;
 import org.junit.Test;
 
 /**

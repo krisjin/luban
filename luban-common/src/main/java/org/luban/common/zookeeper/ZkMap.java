@@ -5,7 +5,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ForwardingMap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import org.bscl.common.thread.ThreadUtil;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

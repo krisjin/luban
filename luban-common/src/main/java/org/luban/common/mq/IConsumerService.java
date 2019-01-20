@@ -1,8 +1,7 @@
 package org.luban.common.mq;
 
-import org.bscl.common.mq.message.IQueueMessage;
-import org.bscl.common.service.ILifeService;
 import org.luban.common.mq.message.IQueueMessage;
+import org.luban.common.service.ILifeService;
 
 /**
  * 消费者服务接口

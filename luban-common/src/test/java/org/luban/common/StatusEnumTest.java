@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.enums.IndexedEnum;
+import org.luban.common.enums.IndexedEnum;
 import org.luban.common.enums.IndexedEnum;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.network.IpUtil;
+import org.luban.common.network.IpUtil;
 import org.junit.Test;
 
 import java.net.InetAddress;

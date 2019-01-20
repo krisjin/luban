@@ -5,5 +5,5 @@ package org.luban.common.io.excel;
  * Date: 2016/1/29
  */
 public enum ExcelType {
-    XLSX,XLS
+    XLSX, XLS
 }

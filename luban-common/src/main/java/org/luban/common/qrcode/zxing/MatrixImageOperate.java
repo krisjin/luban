@@ -25,7 +25,6 @@ public class MatrixImageOperate {
     }
 
 
-
     private static BufferedImage toBufferedImage(BitMatrix matrix) {
         int width = matrix.getWidth();
         int height = matrix.getHeight();

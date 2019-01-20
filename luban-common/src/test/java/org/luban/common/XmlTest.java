@@ -1,11 +1,11 @@
 package org.luban.common;
 
-import org.bscl.common.config.xml.client.ServerElement;
-import org.bscl.common.config.xml.client.ServiceGroup;
-import org.bscl.common.config.xml.server.Server;
-import org.bscl.common.config.xml.server.Servers;
-import org.bscl.common.io.JAXBUtil;
-import org.bscl.common.config.xml.client.Group;
+import org.luban.common.config.xml.client.ServerElement;
+import org.luban.common.config.xml.client.ServiceGroup;
+import org.luban.common.config.xml.server.Server;
+import org.luban.common.config.xml.server.Servers;
+import org.luban.common.io.JAXBUtil;
+import org.luban.common.config.xml.client.Group;
 
 import java.util.List;
 import java.util.Map;

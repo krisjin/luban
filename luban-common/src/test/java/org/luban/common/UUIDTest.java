@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.encrypt.UuidUtil;
+import org.luban.common.encrypt.UuidUtil;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.model.Car;
+import org.luban.common.model.Car;
 import org.junit.Test;
 import org.luban.common.model.Car;
 

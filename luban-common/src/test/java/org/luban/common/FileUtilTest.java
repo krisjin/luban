@@ -1,6 +1,6 @@
 package org.luban.common;
 
-import org.bscl.common.io.FileUtil;
+import org.luban.common.io.FileUtil;
 import org.junit.Test;
 import org.luban.common.io.FileUtil;
 

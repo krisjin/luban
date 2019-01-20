@@ -1,9 +1,9 @@
 package org.luban.common;
 
 import com.alibaba.fastjson.JSON;
-import org.bscl.common.model.Car;
-import org.bscl.common.model.Child;
-import org.bscl.common.model.PersonBean2;
+import org.luban.common.model.Car;
+import org.luban.common.model.Child;
+import org.luban.common.model.PersonBean2;
 import org.junit.Test;
 
 import java.util.ArrayList;

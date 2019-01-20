@@ -3,7 +3,7 @@ package org.luban.common;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
-import org.bscl.common.qrcode.zxing.QRCodeHelp;
+import org.luban.common.qrcode.zxing.QRCodeHelp;
 import org.junit.Test;
 
 import java.io.File;

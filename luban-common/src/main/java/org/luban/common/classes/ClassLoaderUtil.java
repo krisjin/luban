@@ -238,12 +238,12 @@ public class ClassLoaderUtil {
         ClassLoaderUtil deployJar = new ClassLoaderUtil();
 
         deployJar.loadPath(libPath);
-        String jarPath = libPath + File.separator + "bscl-common.jar";
+        String jarPath = libPath + File.separator + "luban.common.jar";
 
         deployJar.loadJar(jarPath);
 
-        Class clazz = deployJar.loadClass("org.bscl.common.net.NetUtil");
-        deployJar.loadClassAndInstance("org.bscl.common.net.NetUtil");
+        Class clazz = deployJar.loadClass("org.luban.common.net.NetUtil");
+        deployJar.loadClassAndInstance("org.luban.common.net.NetUtil");
 
     }
 }

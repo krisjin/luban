@@ -171,9 +171,9 @@ public final class ResourceFileURLUtil {
             jsResMap = jsResCfgMap;
         }
         /*
-        * 1. 先根据ZooKeeper中的配置检查是否是源代码模式
-        * 2. 再根据Cookie判断是否是源代码模式
-        */
+         * 1. 先根据ZooKeeper中的配置检查是否是源代码模式
+         * 2. 再根据Cookie判断是否是源代码模式
+         */
         do {
             if ("y".equals(getFromKeptMap("src_mode", jsResMap))) {
                 srcMode = true;

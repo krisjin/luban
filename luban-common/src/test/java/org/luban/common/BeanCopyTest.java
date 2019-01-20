@@ -1,7 +1,7 @@
 package org.luban.common;
 
-import org.bscl.common.model.PersonBean2;
-import org.bscl.common.model.PersonBean1;
+import org.luban.common.model.PersonBean2;
+import org.luban.common.model.PersonBean1;
 import org.junit.Test;
 
 /**
