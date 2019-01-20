@@ -2,14 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.bscl</groupId>
-    <artifactId>bscl</artifactId>
+    <groupId>org.luban</groupId>
+    <artifactId>luban</artifactId>
     <version>0.0.1-REALEASE</version>
     <modules>
-        <module>bscl-common</module>
+        <module>luban-common</module>
     </modules>
     <packaging>pom</packaging>
-    <name>bscl</name>
+    <name>luban</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
