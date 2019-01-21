@@ -11,12 +11,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * servergroup节点
+ * server group节点
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {})
 @XmlRootElement(name = "service-groups")
 public class Group {
+
     @XmlAttribute(name = "name", required = true)
     private String name;
     @XmlElement(name = "servers", required = true)
