@@ -16,5 +16,5 @@ public interface ILifeService extends Service {
      *
      * @return
      */
-    public String getName();
+    String getName();
 }

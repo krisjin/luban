@@ -16,12 +16,12 @@ public interface IConsumerService<T extends IQueueMessage> extends ILifeService 
     /**
      * 启动消费者线程
      */
-    public void startConsumer();
+    void startConsumer();
 
     /**
      * 终止消费者线程
      */
-    public void stopConsumer();
+    void stopConsumer();
 
     /**
      * 入队是“不阻塞”的，保证生产者(API)线程不会卡顿
