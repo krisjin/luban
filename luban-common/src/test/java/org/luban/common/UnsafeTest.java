@@ -34,6 +34,7 @@ public class UnsafeTest {
 //            unsafe.putInt(user, unsafe.objectFieldOffset(age), 101);
 //            unsafe.putDouble(user, unsafe.objectFieldOffset(height), 100.1);
 
+            unsafe.freeMemory(1213232L);
 
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
