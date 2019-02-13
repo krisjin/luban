@@ -499,7 +499,7 @@ public final class JVMUtil {
         }
 
         /**
-         * 取得getProcessCpuTime方法,这个方法是Orace jvm的方法
+         * 取得getProcessCpuTime方法,这个方法是Oracle jvm的方法
          *
          * @return
          */

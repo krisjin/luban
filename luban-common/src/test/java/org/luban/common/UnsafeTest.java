@@ -22,6 +22,7 @@ public class UnsafeTest {
             Class carClass = car.getClass();
             Field brandField = carClass.getDeclaredField("brand");
             Field colorField = carClass.getDeclaredField("color");
+            Field price = carClass.getDeclaredField("price");
 
             long brandOffset = unsafe.objectFieldOffset(brandField);
             long colorOffset = unsafe.objectFieldOffset(colorField);
@@ -29,12 +30,12 @@ public class UnsafeTest {
             System.err.println(colorOffset);
 
             //直接往内存地址写数据
-//            unsafe.putObject(user, unsafe.objectFieldOffset(name), "midified-name");
-//            unsafe.putLong(user, unsafe.objectFieldOffset(id), 100l);
+            unsafe.putObject(car, unsafe.objectFieldOffset(brandField), "baoma");
 //            unsafe.putInt(user, unsafe.objectFieldOffset(age), 101);
-//            unsafe.putDouble(user, unsafe.objectFieldOffset(height), 100.1);
+            unsafe.putDouble(car, unsafe.objectFieldOffset(price), 100.1);
 
-            unsafe.freeMemory(1213232L);
+            System.out.println(car.getBrand() + " " + car.getPrice());
+//            unsafe.freeMemory(1213232L);
 
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
