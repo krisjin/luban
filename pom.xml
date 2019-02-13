@@ -53,11 +53,7 @@
             <artifactId>commons-codec</artifactId>
             <version>1.9</version>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.3</version>
-        </dependency>
+  
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
@@ -91,7 +87,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.3</version>
+            <version>1.2.47</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
