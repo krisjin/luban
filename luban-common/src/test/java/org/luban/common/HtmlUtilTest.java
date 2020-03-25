@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.luban.common.web.html.HtmlUtil;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/6/21
  */
 public class HtmlUtilTest {

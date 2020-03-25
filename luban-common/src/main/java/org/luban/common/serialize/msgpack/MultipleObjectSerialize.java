@@ -10,7 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/3/10
  */
 public class MultipleObjectSerialize {

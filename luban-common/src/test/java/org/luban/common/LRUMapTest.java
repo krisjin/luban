@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/9/5
  */
 public class LRUMapTest {

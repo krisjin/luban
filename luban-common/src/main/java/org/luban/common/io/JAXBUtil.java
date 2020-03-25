@@ -10,7 +10,7 @@ import java.io.*;
 import java.net.URL;
 
 /**
- * User : shijingui
+ * User : krisjin
  * Date: 2015/6/30
  * Time: 16:33
  */

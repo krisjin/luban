@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.UUID;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/5/18
  */
 public class JUGUUIdGeneratorTest {

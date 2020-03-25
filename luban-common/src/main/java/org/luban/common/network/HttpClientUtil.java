@@ -27,7 +27,7 @@ import java.util.List;
 
 /**
  * HttpClient工具类
- * User: shijingui
+ * User: krisjin
  * Date: 2015/12/23
  */
 public final class HttpClientUtil {

@@ -6,7 +6,7 @@ import java.util.Locale;
 
 /**
  * 操作环境相关的功能封装
- * User: shijingui
+ * User: krisjin
  * Date: 2015/11/14
  */
 public class OsUtil {

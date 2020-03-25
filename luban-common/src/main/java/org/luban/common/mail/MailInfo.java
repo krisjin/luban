@@ -3,7 +3,7 @@ package org.luban.common.mail;
 /**
  * 邮箱信息
  *
- * @author shijingui
+ * @author krisjin
  * @date 2014-5-23下午4:25:02
  */
 

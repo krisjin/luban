@@ -7,7 +7,7 @@ import org.luban.common.model.Car;
 import java.lang.ref.WeakReference;
 
 /**
- * User : shijingui
+ * User : krisjin
  * Date: 2015/9/2
  * Time: 10:26
  */

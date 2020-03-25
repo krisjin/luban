@@ -5,7 +5,7 @@ import org.luban.common.model.PersonBean1;
 import org.junit.Test;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/1/22
  */
 public class BeanCopyTest {

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/11/23
  */
 public class JsonTest {
@@ -19,7 +19,7 @@ public class JsonTest {
         List<PersonBean2> list = new ArrayList<PersonBean2>();
         PersonBean2 person = new PersonBean2();
         person.setAddress("北京朝阳");
-        person.setUsername("shijingui");
+        person.setUsername("krisjin");
         Car car = new Car();
         car.setBrand("豹猫");
         car.setPrice(111);

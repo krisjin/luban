@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 /**
  * 网络相关操作工具类
- * User: shijingui
+ * User: krisjin
  * Date: 2016/11/8
  */
 public class NetUtil {

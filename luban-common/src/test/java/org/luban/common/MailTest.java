@@ -17,7 +17,7 @@ public class MailTest {
         info.setTo("krisibm@163.com");
         info.setSubject("Hello World!");
         info.setUsername("masksalt@163.com");
-        info.setPassword("shijingui2016");
+        info.setPassword("krisjin2016");
         info.setServerHost("smtp.163.com");
         info.setIsAuth(true);
         info.setMailName("Hello Worlddddddddddddddddddddddddddddd!!");

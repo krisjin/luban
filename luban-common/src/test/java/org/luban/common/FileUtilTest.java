@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/9/6
  */
 public class FileUtilTest {

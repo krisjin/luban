@@ -16,7 +16,7 @@ public class DesTest extends TestCase {
 
         DesEncrypterUtil encrypter = new DesEncrypterUtil("gs7n$en76$3@ad1s");
 
-        String ciphertext = encrypter.encrypt("shijingui|1986|chaoyangmen|nan");
+        String ciphertext = encrypter.encrypt("krisjin|1986|chaoyangmen|nan");
 
         String plainText = encrypter.decrypt(cipherStr);
 

@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/4/15
  */
 public class CsvExportUtil {

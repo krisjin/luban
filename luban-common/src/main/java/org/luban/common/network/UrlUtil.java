@@ -6,7 +6,7 @@ import java.net.URL;
 
 /**
  * 提供URL及URI的相关处理功能
- * User: shijingui
+ * User: krisjin
  * Date: 2015/11/14
  */
 public class UrlUtil {

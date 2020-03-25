@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.net.InetAddress;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/5/11
  */
 public class IpUtilTest {

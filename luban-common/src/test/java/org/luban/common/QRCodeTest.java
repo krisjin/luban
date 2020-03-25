@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Hashtable;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/5/24
  */
 public class QRCodeTest {

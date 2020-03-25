@@ -4,7 +4,7 @@ import org.luban.common.enums.ProcessStatus;
 import org.junit.Test;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/10/9
  */
 public class EnumTest {

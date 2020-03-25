@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.HashSet;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/6/6
  */
 public class Base64UtilTest {

@@ -5,7 +5,7 @@ import org.apache.xmlbeans.impl.util.Base64;
 import java.io.UnsupportedEncodingException;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/6/6
  */
 public class Base64Util {

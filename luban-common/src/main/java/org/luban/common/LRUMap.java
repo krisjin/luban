@@ -3,7 +3,7 @@ package org.luban.common;
 import java.util.LinkedHashMap;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/3/3
  */
 public class LRUMap<K, V> extends LinkedHashMap<K, V> {

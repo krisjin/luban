@@ -1,7 +1,7 @@
 package org.luban.common.model;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/1/22
  */
 public class PersonBean1 {

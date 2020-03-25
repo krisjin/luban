@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/9/13
  */
 public class RandomTest {
