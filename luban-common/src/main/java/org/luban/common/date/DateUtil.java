@@ -20,10 +20,11 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 日期处理工具
+ * User:krisjin
+ * Date:2019-01-03
  */
 public final class DateUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(DateUtil.class);
-
 
     private static final long ONE_MINUTE = 60000L;
     private static final long ONE_HOUR = 3600000L;
