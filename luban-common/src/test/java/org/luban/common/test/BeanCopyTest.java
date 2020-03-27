@@ -1,5 +1,6 @@
-package org.luban.common;
+package org.luban.common.test;
 
+import org.luban.common.BeanCopierUtils;
 import org.luban.common.model.PersonBean2;
 import org.luban.common.model.PersonBean1;
 import org.junit.Test;

@@ -1,6 +1,7 @@
-package org.luban.common;
+package org.luban.common.test;
 
 import org.junit.Test;
+import org.luban.common.LRUMap;
 
 import static org.junit.Assert.assertEquals;
 

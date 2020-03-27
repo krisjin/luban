@@ -1,4 +1,4 @@
-package org.luban.common;
+package org.luban.common.test;
 
 /**
  * 谈谈Integer i = new Integer(xxx)和Integer i =xxx;这两种方式的区别。

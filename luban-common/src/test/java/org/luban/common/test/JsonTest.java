@@ -1,4 +1,4 @@
-package org.luban.common;
+package org.luban.common.test;
 
 import com.alibaba.fastjson.JSON;
 import org.luban.common.model.Car;

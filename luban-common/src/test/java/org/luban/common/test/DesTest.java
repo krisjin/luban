@@ -1,4 +1,4 @@
-package org.luban.common;
+package org.luban.common.test;
 
 import junit.framework.TestCase;
 import org.luban.common.encrypt.DesEncrypterUtil;

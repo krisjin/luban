@@ -1,4 +1,4 @@
-package org.luban.common;
+package org.luban.common.test;
 
 /**
  * <p/>
