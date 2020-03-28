@@ -10,7 +10,7 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
-import org.luban.common.thread.ThreadUtil;
+import org.luban.common.concurrent.ThreadUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
