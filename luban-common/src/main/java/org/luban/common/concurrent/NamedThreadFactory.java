@@ -33,7 +33,7 @@ public class NamedThreadFactory implements ThreadFactory {
     @Override
     public Thread newThread(Runnable r) {
         Thread thread = new Thread(r);
-        thread.setName(name + " - " + counter.incrementAndGet());
+        thread.setName(name + "-" + counter.incrementAndGet());
         if (daemon) {
             thread.setDaemon(daemon);
         }
