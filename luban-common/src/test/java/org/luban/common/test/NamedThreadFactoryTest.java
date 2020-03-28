@@ -1,5 +1,7 @@
 package org.luban.common.test;
 
+import org.luban.common.concurrent.NamedThreadFactory;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -9,10 +11,10 @@ import java.util.concurrent.TimeUnit;
  * User:krisjin
  * Date:2020-03-28
  */
-public class NamedThreadFactory {
+public class NamedThreadFactoryTest {
 
     private static ExecutorService executor = new ThreadPoolExecutor(50, 50, 30L,
-            TimeUnit.SECONDS, new SynchronousQueue(), new org.luban.common.concurrent.NamedThreadFactory("test"));
+            TimeUnit.SECONDS, new SynchronousQueue(), new NamedThreadFactory("test"));
 
     public static void main(String[] args) {
 
