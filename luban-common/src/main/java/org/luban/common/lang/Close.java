@@ -18,9 +18,7 @@ import java.util.Timer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author hexiaofeng
- */
+
 public class Close {
 
     private static Close instance = new Close();
