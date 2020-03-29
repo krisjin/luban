@@ -1,6 +1,5 @@
 package org.luban.common.demo.io;
 
-import org.luban.common.io.FileUtil;
 import org.junit.Test;
 import org.luban.common.io.FileUtil;
 
@@ -27,7 +26,11 @@ public class FileUtilTest {
     @Test
     public void test2() {
         File file = new File("/usr/local/tools/testFile.txt");
-        String str = "hello docker!!欢迎来您的到来！！";
-        FileUtil.string2File(file, str, true);
+        String str = "Hello world! ";
+        for (int i = 0; i < 10; i++) {
+
+            String newStr = str + i;
+            FileUtil.string2File(file, newStr + " \n", true);
+        }
     }
 }
