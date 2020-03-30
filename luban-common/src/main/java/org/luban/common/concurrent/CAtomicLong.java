@@ -5,7 +5,6 @@ import sun.misc.Unsafe;
 
 /**
  * 位置，可以充分利用CPU缓存，加快访问速度
- * Created by hexiaofeng on 16-6-29.
  */
 public class CAtomicLong {
     private static final Unsafe UNSAFE;
