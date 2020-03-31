@@ -81,7 +81,7 @@ public class CsvExportUtil {
                         if (null == field) {
                             field = "";
                         } else if (field instanceof Date) {
-                            //field = DateUtil.format((Date) field, "yyyy-MM-dd HH:mm:ss");
+                            //field = DateTimeUtil.format((Date) field, "yyyy-MM-dd HH:mm:ss");
                         }
                         //写入，已英文,分割
                         if (j == properties.length - 1) {

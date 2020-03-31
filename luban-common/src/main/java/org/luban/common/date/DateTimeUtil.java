@@ -23,8 +23,8 @@ import java.util.concurrent.TimeUnit;
  * User:krisjin
  * Date:2019-01-03
  */
-public final class DateUtil {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DateUtil.class);
+public final class DateTimeUtil {
+    private static final Logger log = LoggerFactory.getLogger(DateTimeUtil.class);
 
     private static final long ONE_MINUTE = 60000L;
     private static final long ONE_HOUR = 3600000L;
@@ -66,7 +66,13 @@ public final class DateUtil {
      */
     public static final long DAY_IN_MILLIS = 1000L * 60 * 60 * 24;
 
-    private DateUtil() {
+    protected final Calendar calendar;
+
+    private DateTimeUtil(final Calendar calendar) {
+        if (calendar == null) {
+            throw new IllegalArgumentException("calendar can not be null");
+        }
+        this.calendar = calendar;
     }
 
     /**
@@ -275,7 +281,7 @@ public final class DateUtil {
     public static final String[] checkDate(String begin, String end) {
         Date beginDate;
         Date endDate;
-        SimpleDateFormat sdf = new SimpleDateFormat(DateUtil.DATE_STR);
+        SimpleDateFormat sdf = new SimpleDateFormat(DateTimeUtil.DATE_STR);
         if (!Strings.isNullOrEmpty(begin) && !Strings.isNullOrEmpty(end)) {
             try {
                 beginDate = sdf.parse(begin);
@@ -652,7 +658,7 @@ public final class DateUtil {
             try {
                 gc = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
             } catch (Exception e) {
-                LOGGER.info("convertToXMLGregorianCalendar fail", e);
+                log.info("convertToXMLGregorianCalendar fail", e);
             }
             return gc;
         }

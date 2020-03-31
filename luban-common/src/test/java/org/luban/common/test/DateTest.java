@@ -1,8 +1,7 @@
 package org.luban.common.test;
 
-import org.luban.common.date.DateUtil;
 import org.junit.Test;
-import org.luban.common.date.DateUtil;
+import org.luban.common.date.DateTimeUtil;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -18,25 +17,25 @@ public class DateTest {
     @Test
     public void test1() {
 
-        Date date = DateUtil.parseDate("20150810145612", "yyyyMMddHHmmss");
+        Date date = DateTimeUtil.parseDate("20150810145612", "yyyyMMddHHmmss");
 
-        String dateStr = DateUtil.formatDate(date, "yyyy-MM-dd");
-        String currentDate = DateUtil.getCurrentDateTimeStr();
+        String dateStr = DateTimeUtil.formatDate(date, "yyyy-MM-dd");
+        String currentDate = DateTimeUtil.getCurrentDateTimeStr();
         System.out.println(date);
         System.out.println(dateStr);
         System.out.println(currentDate);
-        Date d = DateUtil.getPreMonth();
+        Date d = DateTimeUtil.getPreMonth();
 
-        System.out.println(DateUtil.formatDate(d, DateUtil.DATETIME_STR));
+        System.out.println(DateTimeUtil.formatDate(d, DateTimeUtil.DATETIME_STR));
 
-        Date date1 = DateUtil.getDate(-15);
+        Date date1 = DateTimeUtil.getDate(-15);
         System.out.println(date1);
-        Date date2 = DateUtil.getCurrentDayEndTime();
+        Date date2 = DateTimeUtil.getCurrentDayEndTime();
         System.out.println(date2);
 
-        System.out.println(DateUtil.formatBeforeDate(new Date()));
+        System.out.println(DateTimeUtil.formatBeforeDate(new Date()));
 
-        Date date3 = DateUtil.getDate(0);
+        Date date3 = DateTimeUtil.getDate(0);
         System.out.println(date3);
 
         Calendar c = Calendar.getInstance();
@@ -57,10 +56,10 @@ public class DateTest {
 
 
         String ddd = "2016-1";
-        System.out.println(DateUtil.getMaxDayOfYearMonth(ddd));
+        System.out.println(DateTimeUtil.getMaxDayOfYearMonth(ddd));
 
         String season = "2016.1";
-        System.out.println(DateUtil.getMaxDayOfSeason(season));
+        System.out.println(DateTimeUtil.getMaxDayOfSeason(season));
 
     }
 }
