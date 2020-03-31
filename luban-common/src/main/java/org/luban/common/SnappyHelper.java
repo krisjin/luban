@@ -12,7 +12,6 @@ import java.io.IOException;
 public class SnappyHelper {
 
 
-
     public static byte[] compressHtml(String html) {
         try {
 
