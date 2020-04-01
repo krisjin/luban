@@ -56,7 +56,7 @@ public class DateTest {
 
 
         String ddd = "2016-1";
-        System.out.println(DateTimeUtil.getMaxDayOfYearMonth(ddd));
+        System.out.println(DateTimeUtil.getMaxDayOfMonth(ddd));
 
         String season = "2016.1";
         System.out.println(DateTimeUtil.getMaxDayOfSeason(season));

@@ -46,6 +46,7 @@ public final class DateTimeUtil {
     public static final String DATETIME_STR = "yyyy-MM-dd HH:mm:ss";
     public static final String DATETIME_STAMP = "yyyy-MM-dd HH:mm";
     public static final String DATEHOUR_STR = "yyyy-MM-dd HH";
+
     public static final int RATE_MILLIS_TO_SECONDS = 1000;
     public static final String ONE_SEASON_LAST_MONTH = "03";
     public static final String TWO_SEASON_LAST_MONTH = "06";
@@ -196,7 +197,7 @@ public final class DateTimeUtil {
      * @param date
      * @return
      */
-    public static String getMaxDayOfYearMonth(String date) {
+    public static String getMaxDayOfMonth(String date) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
         try {
             Date d = sdf.parse(date);
@@ -237,7 +238,7 @@ public final class DateTimeUtil {
                 break;
         }
         String date = year + "-" + month;
-        return getMaxDayOfYearMonth(date);
+        return getMaxDayOfMonth(date);
     }
 
     /**
