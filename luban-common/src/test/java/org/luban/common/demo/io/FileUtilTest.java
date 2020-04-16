@@ -30,7 +30,7 @@ public class FileUtilTest {
         for (int i = 0; i < 10; i++) {
 
             String newStr = str + i;
-            FileUtil.string2File(file, newStr + " \n", true);
+            FileUtil.string2File(file, newStr + "\n", false);
         }
     }
 }
