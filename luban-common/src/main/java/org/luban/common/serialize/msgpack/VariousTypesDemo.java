@@ -3,7 +3,7 @@ package org.luban.common.serialize.msgpack;
 import java.util.List;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/3/10
  */
 public class VariousTypesDemo {

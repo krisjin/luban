@@ -15,7 +15,7 @@ import java.util.Hashtable;
 import java.util.Random;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/5/24
  */
 public class QRCodeUtil {

@@ -13,7 +13,7 @@ import java.util.jar.JarFile;
 
 /**
  * 类加载工具类
- * User: shijingui
+ * User: krisjin
  * Date: 2016/12/4
  */
 public class ClassLoaderUtil {

@@ -4,7 +4,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 
 /**
  * 一个合并单元格属性集合Model
- * User: shijingui
+ * User: krisjin
  * Date: 2016/1/29
  */
 public class CellModel {

@@ -5,12 +5,11 @@ import org.xerial.snappy.Snappy;
 import java.io.IOException;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/2/20
  *  
  */
 public class SnappyHelper {
-
 
 
     public static byte[] compressHtml(String html) {

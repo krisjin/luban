@@ -18,7 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/1/29
  */
 public class Excel {

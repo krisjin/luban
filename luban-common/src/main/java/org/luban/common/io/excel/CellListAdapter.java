@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Sheet中所有单元格加载的列表适配器
- * User: shijingui
+ * User: krisjin
  * Date: 2016/1/29
  */
 public abstract class CellListAdapter {

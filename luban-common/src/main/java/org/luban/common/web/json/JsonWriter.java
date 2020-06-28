@@ -2,7 +2,7 @@ package org.luban.common.web.json;
 
 /**
  * JSON响应数据输出
- * User: shijingui
+ * User: krisjin
  * Date: 2015/12/18
  */
 public class JsonWriter {

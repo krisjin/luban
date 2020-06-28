@@ -4,7 +4,7 @@ import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
 /**
- * @author shijingui
+ * @author krisjin
  * @date 2014-5-23下午4:31:37
  */
 

@@ -1,7 +1,7 @@
 package org.luban.common;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/11/8
  */
 public class Constants {

@@ -14,7 +14,7 @@ import java.util.Properties;
 /**
  * 邮件工具类
  *
- * @author shijingui
+ * @author krisjin
  * @date 2014-5-23下午4:16:22
  */
 

@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * 文件操作工具类
- * User: shijingui
+ * User: krisjin
  * Date: 2016/9/6
  */
 public class FileUtil {

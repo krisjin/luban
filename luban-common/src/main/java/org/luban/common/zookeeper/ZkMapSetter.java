@@ -7,7 +7,7 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
-import org.luban.common.thread.ThreadUtil;
+import org.luban.common.concurrent.ThreadUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

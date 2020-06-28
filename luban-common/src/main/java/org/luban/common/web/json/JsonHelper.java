@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.StringWriter;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/10/8
  */
 public final class JsonHelper {
