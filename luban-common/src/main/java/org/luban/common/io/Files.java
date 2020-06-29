@@ -4,6 +4,8 @@ import org.luban.common.lang.Close;
 
 import java.io.*;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User:krisjin
@@ -446,6 +448,36 @@ public class Files {
         }
         return builder.toString();
     }
+
+
+
+
+    /**
+     * 读文件内容
+     *
+     * @param file 文件
+     * @return 文件内容
+     */
+    public static List<String> readList(final File file) throws IOException {
+        if (file == null || !file.exists() || file.length() < 1) {
+            return null;
+        }
+        List<String> strList = new ArrayList<>();
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                strList.add(line);
+            }
+        } catch (FileNotFoundException e) {
+            //忽略文件不存在
+        } finally {
+//            Close.close(reader);
+        }
+        return strList;
+    }
+
 
     /**
      * 获取文件名后缀，不包括"."
