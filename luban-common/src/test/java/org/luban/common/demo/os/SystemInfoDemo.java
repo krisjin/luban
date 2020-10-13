@@ -1,6 +1,6 @@
 package org.luban.common.demo.os;
 
-import org.luban.common.os.SystemInfo;
+import org.luban.common.SystemInfo;
 
 /**
  * User:krisjin

@@ -1,4 +1,4 @@
-package org.luban.common.chinese;
+package org.luban.common;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;

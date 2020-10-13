@@ -17,8 +17,7 @@ public class Zip implements Compressor {
     public static final Compressor INSTANCE = new Zip();
 
     @Override
-    public void compress(final byte[] buf, final int offset, final int size, final OutputStream out) throws
-            IOException {
+    public void compress(final byte[] buf, final int offset, final int size, final OutputStream out) throws IOException {
         if (buf == null || out == null) {
             return;
         }
@@ -33,8 +32,7 @@ public class Zip implements Compressor {
     }
 
     @Override
-    public void decompress(final byte[] buf, final int offset, final int size, final OutputStream out) throws
-            IOException {
+    public void decompress(final byte[] buf, final int offset, final int size, final OutputStream out) throws IOException {
         if (buf == null || buf.length == 0 || size <= 0 || offset >= buf.length || out == null) {
             return;
         }

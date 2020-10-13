@@ -12,9 +12,7 @@ public class FileUtil {
     }
 
     public static String file2String(File file) throws IOException {
-        if (file == null || !file.isFile() || !file.canRead() || !file.exists()) {
-            return null;
-        }
+        if (file == null || !file.isFile() || !file.canRead() || !file.exists()) return null;
         FileReader reader = null;
         StringWriter writer = null;
         try {

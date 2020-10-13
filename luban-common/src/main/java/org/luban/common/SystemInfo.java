@@ -1,4 +1,4 @@
-package org.luban.common.os;
+package org.luban.common;
 
 import org.luban.common.io.Files;
 import sun.misc.Unsafe;

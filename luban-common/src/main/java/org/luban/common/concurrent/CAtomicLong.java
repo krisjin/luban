@@ -1,6 +1,6 @@
 package org.luban.common.concurrent;
 
-import org.luban.common.os.SystemInfo;
+import org.luban.common.SystemInfo;
 import sun.misc.Unsafe;
 
 /**

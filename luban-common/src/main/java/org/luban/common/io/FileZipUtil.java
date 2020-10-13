@@ -11,7 +11,6 @@ import java.util.zip.ZipOutputStream;
  */
 public class FileZipUtil {
 
-
     /**
      * zip file compress
      *

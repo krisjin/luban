@@ -2,7 +2,7 @@ package org.luban.common.concurrent;
 
 
 import org.luban.common.lang.LifeCycle;
-import org.luban.common.os.SystemInfo;
+import org.luban.common.SystemInfo;
 import org.luban.common.time.SystemClock;
 import sun.misc.Unsafe;
 
