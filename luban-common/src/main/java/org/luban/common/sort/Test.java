@@ -6,7 +6,6 @@ import java.util.Random;
 /**
  * User:krisjin
  * Date:2019/2/23
- *  
  */
 public class Test {
 

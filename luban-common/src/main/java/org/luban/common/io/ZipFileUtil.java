@@ -25,7 +25,7 @@ public class ZipFileUtil {
         long start = System.currentTimeMillis();
         // 判断源文件是否存在
         if (!srcFile.exists()) {
-            log.info("unzip" + srcFile + "file failure，target file is not exist");
+//            log.info("unzip" + srcFile + "file failure，target file is not exist");
             throw new RuntimeException(srcFile.getPath() + "所指文件不存在");
         }
         // 开始解压
