@@ -9,6 +9,7 @@
         <module>luban-common</module>
         <module>luban-redis</module>
         <module>luban-event</module>
+        <module>luban-model</module>
     </modules>
     <packaging>pom</packaging>
     <name>luban</name>
