@@ -69,6 +69,27 @@ public final class DateTimeUtil {
 
     protected final Calendar calendar;
 
+    public static String getLastMonth() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(calendar.MONTH, -1);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
+        String dateStr = sdf.format(calendar.getTime());
+        return dateStr;
+    }
+
+    public static String setMinutes(int n) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(calendar.MINUTE, n);
+        SimpleDateFormat sdf = new SimpleDateFormat(DATETIME_STR);
+        String dateStr = sdf.format(calendar.getTime());
+        return dateStr;
+    }
+
+    public static void main(String[] args) {
+        System.err.println(setMinutes(10));
+    }
+
+
     private DateTimeUtil(final Calendar calendar) {
         if (calendar == null) {
             throw new IllegalArgumentException("calendar can not be null");

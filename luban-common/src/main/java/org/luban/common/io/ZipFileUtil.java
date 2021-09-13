@@ -1,7 +1,5 @@
 package org.luban.common.io;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -11,7 +9,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 
-@Slf4j
+//@Slf4j
 public class ZipFileUtil {
 
     /**
@@ -36,7 +34,7 @@ public class ZipFileUtil {
             Enumeration<?> entries = zipFile.entries();
             while (entries.hasMoreElements()) {
                 ZipEntry entry = (ZipEntry) entries.nextElement();
-                log.info("unzip " + entry.getName());
+//                log.info("unzip " + entry.getName());
                 // 如果是文件夹，就创建个文件夹
                 if (entry.isDirectory()) {
                     String dirPath = destDirPath + "/" + entry.getName();
@@ -58,13 +56,13 @@ public class ZipFileUtil {
                             fos.write(buf, 0, len);
                         }
                     } catch (Exception e) {
-                        log.error(" unZip error:", e);
+//                        log.error(" unZip error:", e);
                     }
                     // 关流顺序，先打开的后关闭
                 }
             }
             long end = System.currentTimeMillis();
-            log.info("unzip complete，耗时：" + (end - start) + " ms");
+//            log.info("unzip complete，耗时：" + (end - start) + " ms");
         } catch (Exception e) {
             throw new RuntimeException("unzip error from ZipUtils", e);
         } finally {
@@ -72,7 +70,7 @@ public class ZipFileUtil {
                 try {
                     zipFile.close();
                 } catch (IOException e) {
-                    log.error(" unZip error:", e);
+//                    log.error(" unZip error:", e);
                 }
             }
         }
