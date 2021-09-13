@@ -19,9 +19,23 @@ public class StringUtil {
     }
 
 
+    public static void addArgs(String argsValue) {
+
+
+        String args=null;
+
+        if (args == null || args.isEmpty()) {
+            args = argsValue;
+        } else {
+            args = args + ";" + argsValue;
+        }
+
+        System.err.println(args);
+    }
+
     public static void main(String[] args) {
         String s = ",";
 
-        System.err.println(isNullOrEmpty(s));
+        addArgs("222");
     }
 }
