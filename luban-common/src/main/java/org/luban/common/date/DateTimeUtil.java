@@ -72,10 +72,13 @@ public final class DateTimeUtil {
     public static String getLastMonth() {
         Calendar calendar = Calendar.getInstance();
         calendar.add(calendar.MONTH, -1);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月");
         String dateStr = sdf.format(calendar.getTime());
         return dateStr;
     }
+
+
+
 
     public static String setMinutes(int n) {
         Calendar calendar = Calendar.getInstance();
@@ -86,7 +89,7 @@ public final class DateTimeUtil {
     }
 
     public static void main(String[] args) {
-        System.err.println(setMinutes(10));
+        System.err.println(getLastMonth());
     }
 
 
@@ -714,6 +717,10 @@ public final class DateTimeUtil {
             return (years <= 0 ? 1 : years) + ONE_YEAR_AGO;
         }
     }
+
+
+
+
 
     private static long toSeconds(long date) {
         return date / 1000L;

@@ -32,6 +32,7 @@ import java.util.Set;
  * Date: 2015/12/23
  */
 public final class HttpClientUtil {
+
     private static final Logger log = LoggerFactory.getLogger(HttpClientUtil.class);
 
     private HttpClientUtil() {
@@ -65,14 +66,7 @@ public final class HttpClientUtil {
         return isConnect;
     }
 
-    public static void main(String[] args) {
-        String url = "https://www.baidu.com/";
-        boolean isConnect = HttpClientUtil.isConnected(url);
-        System.out.println(isConnect);
-    }
-
     /**
-     * 发送HTTP_POST请求
      * 该方法会自动关闭连接,释放资源
      * 当isEncoder=true时,其会自动对sendData中的[中文][|][ ]等特殊字符进行URLEncoder.encode(string,encodeCharset)
      *
@@ -83,7 +77,6 @@ public final class HttpClientUtil {
      * @param decodeCharset 解码字符集,解析响应数据时用之,其为null时默认采用UTF-8解码
      * @return 远程主机响应正文
      */
-
     public static String sendPostRequest(String reqURL, String sendData, boolean isEncoder, String encodeCharset, String decodeCharset) throws Exception {
         String responseContent = null;
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -116,8 +109,6 @@ public final class HttpClientUtil {
 
 
     /**
-     * GET提交
-     *
      * @return
      */
     public static String doGet(String url) {
@@ -167,19 +158,15 @@ public final class HttpClientUtil {
     }
 
     /**
-     * 普通POST提交
-     *
      * @param url
      * @param map
      * @return
      */
     public static String doPost(String url, Map<String, Object> map) {
         String strResult = "";
-        // 1. 获取默认的client实例
+
         CloseableHttpClient client = HttpClients.createDefault();
-        // 2. 创建httppost实例
         HttpPost httpPost = new HttpPost(url);
-        // 3. 创建参数队列（键值对列表）
         List<NameValuePair> paramPairs = new ArrayList<>();
         Set<String> keySet = map.keySet();
         for (String key : keySet) {
@@ -202,7 +189,6 @@ public final class HttpClientUtil {
                 // 9. 关闭响应对象
                 resp.close();
             }
-
         } catch (ClientProtocolException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
@@ -261,5 +247,24 @@ public final class HttpClientUtil {
         return strResult;
     }
 
+    private static String parseInstanceId(String resultData) {
+        if (resultData == null || resultData.isEmpty()) {
+            return null;
+        }
+        String instanceTaskId = null;
+        Map mapData = JSONObject.parseObject(resultData, Map.class);
 
+        boolean isSuccess = Boolean.valueOf(mapData.get("success") + "");
+        if (isSuccess) {
+            Object obj = mapData.get("obj");
+            if (null != obj) {
+                Map objMap = JSONObject.parseObject(String.valueOf(obj), Map.class);
+                Object id = objMap.get("instanceTaskId");
+                if (id != null) {
+                    instanceTaskId = String.valueOf(id);
+                }
+            }
+        }
+        return instanceTaskId;
+    }
 }
