@@ -10,6 +10,7 @@
         <module>luban-redis</module>
         <module>luban-event</module>
         <module>luban-model</module>
+        <module>luban-bloomfilter</module>
     </modules>
     <packaging>pom</packaging>
     <name>luban</name>
