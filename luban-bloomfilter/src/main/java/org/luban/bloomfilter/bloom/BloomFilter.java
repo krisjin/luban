@@ -1,7 +1,6 @@
 package org.luban.bloomfilter.bloom;
 
 
-import org.luban.bloomfilter.redis.RedisClient;
 import redis.clients.jedis.Jedis;
 
 /**

@@ -1,22 +1,13 @@
 package org.luban.bloomfilter.bloom;
 
 /**
- * @description: 容量及误判率预估
- *
- * @author: sunrui62
- * @create: 2021/7/22 8:55 下午
+ * BloomFilterUtil
+ * https://hur.st/bloomfilter/ ，看了其他文档log函数是以e为底的, 该网址最后一个k是以10为低的, 存在gap, 整体相差不大可以参考使用
  **/
 public class BloomFilterUtil {
-    static {
-        String desc = "n: 预估元素个数" +
-                "p：误判率" +
-                "m：bitmap位数" +
-                "k：hash函数" +
-                "参考： https://hur.st/bloomfilter/ ，看了其他文档log函数是以e为底的, 该网址最后一个k是以10为低的, 存在gap, 整体相差不大可以参考使用";
-    }
 
     /**
-     * 计算预估元素
+     * 计算预估元素个数
      * @param p
      * @param m
      * @param k
