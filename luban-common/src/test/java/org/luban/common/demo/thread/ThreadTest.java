@@ -15,7 +15,7 @@ public class ThreadTest {
 
 
     public static void main(String[] args) {
-        final List<Callable> subTaskList = new ArrayList<>();
+        final List<Callable> subTaskList = new ArrayList();
         for (int i = 0; i < 10; i++) {
             subTaskList.add(new SubTask("t-" + i));
         }
@@ -35,7 +35,6 @@ public class ThreadTest {
             this.newName = newName;
         }
 
-        @Override
         public Boolean call() throws Exception {
             System.out.println("--" + newName);
             return true;

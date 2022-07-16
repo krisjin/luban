@@ -120,11 +120,6 @@
             <artifactId>cglib</artifactId>
             <version>3.0</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>asm</groupId>-->
-        <!--<artifactId>asm-all</artifactId>-->
-        <!--<version>3.0</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>org.xerial.snappy</groupId>
@@ -232,19 +227,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ftp</artifactId>
-                <version>2.10</version>
-            </extension>
-        </extensions>
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>localRepository</id>
-            <url>/usr/local/mvnrep</url>
-        </repository>
-    </distributionManagement>
 </project>

@@ -6,7 +6,6 @@ package org.luban.common.model;
  */
 public class PersonBean2 {
     private String username;
-
     private String favorit;
 
     private String address;

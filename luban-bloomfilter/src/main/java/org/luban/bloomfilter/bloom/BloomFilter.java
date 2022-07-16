@@ -1,7 +1,7 @@
 package org.luban.bloomfilter.bloom;
 
 
-import org.data.bloom.redis.RedisClient;
+import org.luban.bloomfilter.redis.RedisClient;
 import redis.clients.jedis.Jedis;
 
 /**
@@ -44,7 +44,7 @@ public class BloomFilter {
      */
     private long bitMapLength;
 
-    private Jedis jedis = new RedisClient().getPool();
+    private Jedis jedis;
 
     /**
      * @param jedis           jimdb客户端
