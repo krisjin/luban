@@ -36,4 +36,7 @@ public class HashFunction {
         }
         return (size - 1) & result;
     }
+
+    public static void main(String[] args) {
+    }
 }

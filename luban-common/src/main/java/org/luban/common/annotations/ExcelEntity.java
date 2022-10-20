@@ -9,10 +9,8 @@ import static java.lang.annotation.ElementType.*;
 
 /**
  * Excel操作实体注解
- * <p/>
  * User : krisibm@163.com
  * Date: 2015/6/30
- * Time: 22:41
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({METHOD, FIELD, PARAMETER, TYPE})

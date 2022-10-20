@@ -2,10 +2,8 @@ package org.luban.common.codec;
 
 
 /**
- * <p/>
  * User : krisibm@163.com
  * Date: 2015/5/28
- * Time: 19:19
  */
 public final class ByteUtil {
 

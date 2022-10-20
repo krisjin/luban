@@ -2,10 +2,8 @@ package org.luban.common.codec;
 
 /**
  * 位操作工具类
- * <p/>
  * User : krisibm@163.com
  * Date: 2015/9/18
- * Time: 17:15
  */
 public class BitUtil {
 

@@ -87,8 +87,7 @@ public final class MD5Util {
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
             digestInputStream = new DigestInputStream(fileInputStream, messageDigest);
             byte[] buffer = new byte[bufferSize];
-            while (digestInputStream.read(buffer) > 0)
-                ;
+            while (digestInputStream.read(buffer) > 0) ;
             messageDigest = digestInputStream.getMessageDigest();
             byte[] resultByteArray = messageDigest.digest();
             return byteArrayToHex(resultByteArray);
@@ -125,6 +124,12 @@ public final class MD5Util {
         }
         // 字符数组组合成字符串返回
         return new String(resultCharArray);
+    }
+
+    //389d49e4ec456577d816f741e1372350
+    public static void main(String[] args) {
+        String md5 = MD5Util.digestHex(System.currentTimeMillis() + "LucasGC");
+        System.out.println(md5);
     }
 
 }
