@@ -128,8 +128,6 @@ public final class MD5Util {
 
     //389d49e4ec456577d816f741e1372350
     public static void main(String[] args) {
-        String md5 = MD5Util.digestHex(System.currentTimeMillis() + "LucasGC");
-        System.out.println(md5);
     }
 
 }
