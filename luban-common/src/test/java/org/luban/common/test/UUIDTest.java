@@ -1,33 +1,32 @@
 package org.luban.common.test;
 
-import org.luban.common.encrypt.UuidUtil;
+import org.junit.Test;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+public class UUIDTest {
 
-/**
- * <p/>
- * User : krisibm@163.com
- * Date: 2015/9/1
- * Time: 15:11
- */
-public class UUIDTest implements Runnable {
+    @Test
+    public void changeY2FTest() {
+        String ss= changeY2F(13543541.21);
+        System.err.println(ss);
+    }
 
-    public static void main(String[] args) {
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
-        for (int i = 0; i < 6; i++) {
-            executorService.execute(new UUIDTest());
+
+    public static String changeY2F(Double amount) {
+        String currency = amount.toString();
+        int index = currency.indexOf(".");
+        int length = currency.length();
+        Long amLong = 0l;
+        if (index == -1) {
+            amLong = Long.valueOf(currency + "00");
+        } else if (length - index >= 3) {
+            amLong = Long.valueOf((currency.substring(0, index + 3)).replace(".", ""));
+        } else if (length - index == 2) {
+            amLong = Long.valueOf((currency.substring(0, index + 2)).replace(".", "") + 0);
+        } else {
+            amLong = Long.valueOf((currency.substring(0, index + 1)).replace(".", "") + "00");
         }
+        return amLong.toString();
     }
 
-    private void printUuid() {
-        System.out.println(UuidUtil.genTerseUuid());
-    }
 
-    @Override
-    public void run() {
-        for (int i = 0; i < 10; i++) {
-            printUuid();
-        }
-    }
 }

@@ -144,8 +144,4 @@ public class QRCodeUtil {
         return decode(new File(path));
     }
 
-    public static void main(String[] args) throws Exception {
-        String text = "http://www.hao123.com/?tn=94855055_hao_pg";
-        encode(text, "d:/ss.jpg", "d:/", true);
-    }
 }
