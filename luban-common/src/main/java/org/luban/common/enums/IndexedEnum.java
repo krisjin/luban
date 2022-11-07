@@ -14,9 +14,6 @@ import java.util.List;
  * <b>建议:</b>
  * 此接口实现类的元素保持index的连续以节省空间
  * <p/>
- * User : krisibm@163.com
- * Date: 2015/5/27
- * Time: 8:46
  */
 public interface IndexedEnum {
     /**
