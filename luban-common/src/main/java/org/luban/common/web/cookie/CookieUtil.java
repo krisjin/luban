@@ -10,10 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Cookie操作工具类
- * <p/>
- * User : krisibm@163.com
- * Date: 2015/5/25
- * Time: 18:02
  */
 public final class CookieUtil {
 

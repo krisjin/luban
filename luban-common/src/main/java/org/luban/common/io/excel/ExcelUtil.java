@@ -26,19 +26,13 @@ import java.util.List;
 public final class ExcelUtil {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExcelUtil.class);
-
     private static final String STATDATE_CELL = "STATDATE";
-
     private static final String APPID_CELL = "APPID";
-
     private static final String ACTIVECOUNT_CELL = "ACTIVECOUNT";
-
     private static Class<?> excelEntity;
-
 
     private ExcelUtil() {
     }
-
 
     /**
      * @param is
