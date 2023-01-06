@@ -13,10 +13,6 @@ import java.util.Set;
 
 /**
  * JVM相关的工具类
- * <p/>
- * User : krisibm@163.com
- * Date: 2015/10/14
- * Time: 16:40
  */
 public final class JVMUtil {
 
@@ -318,20 +314,7 @@ public final class JVMUtil {
 
         @Override
         public String toString() {
-            return "GcSnapshot{" +
-                    "gcTime=" + gcTime +
-                    ", gcTimeOffset" + gcTimeOffset +
-                    ", gcCount=" + gcCount +
-                    ", gcCountOffset" + gcCountOffset +
-                    ", youngGcTime=" + youngGcTime +
-                    ", youngGcTimeOffset" + youngGcTimeOffset +
-                    ", youngGcCount=" + youngGcCount +
-                    ", youngGcCountOffset" + youngGcCountOffset +
-                    ", fullGcTime=" + fullGcTime +
-                    ", fullGcTimeOffset" + fullGcTimeOffset +
-                    ", fullGcCount=" + fullGcCount +
-                    ", fullGcCountOffset" + fullGcCountOffset +
-                    '}';
+            return "GcSnapshot{" + "gcTime=" + gcTime + ", gcTimeOffset" + gcTimeOffset + ", gcCount=" + gcCount + ", gcCountOffset" + gcCountOffset + ", youngGcTime=" + youngGcTime + ", youngGcTimeOffset" + youngGcTimeOffset + ", youngGcCount=" + youngGcCount + ", youngGcCountOffset" + youngGcCountOffset + ", fullGcTime=" + fullGcTime + ", fullGcTimeOffset" + fullGcTimeOffset + ", fullGcCount=" + fullGcCount + ", fullGcCountOffset" + fullGcCountOffset + '}';
         }
     }
 
@@ -445,8 +428,7 @@ public final class JVMUtil {
         public static String getJavaCommand() {
             try {
                 Class clazz = Class.forName("sun.misc.VMSupport");
-                @SuppressWarnings("unchecked")
-                Method m = clazz.getMethod("getAgentProperties");
+                @SuppressWarnings("unchecked") Method m = clazz.getMethod("getAgentProperties");
                 m.setAccessible(true);
                 Properties properties = (Properties) m.invoke(clazz);
                 return properties.getProperty("sun.java.command");
@@ -506,8 +488,7 @@ public final class JVMUtil {
         private static Method getProcessCpuTimeMethod() {
             Class aClass = mxBean.getClass();
             try {
-                @SuppressWarnings("unchecked")
-                Method m = aClass.getMethod("getProcessCpuTime");
+                @SuppressWarnings("unchecked") Method m = aClass.getMethod("getProcessCpuTime");
                 m.setAccessible(true);
                 return m;
             } catch (NoSuchMethodException e) {
