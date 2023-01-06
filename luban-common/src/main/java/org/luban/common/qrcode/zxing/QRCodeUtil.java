@@ -14,10 +14,6 @@ import java.io.OutputStream;
 import java.util.Hashtable;
 import java.util.Random;
 
-/**
- * User: krisjin
- * Date: 2016/5/24
- */
 public class QRCodeUtil {
 
     private static final String CHARSET = "UTF-8";

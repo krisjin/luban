@@ -7,10 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-/**
- * User: krisjin
- * Date: 2016/5/31
- */
 public class QRCodeHelp {
 
     /**

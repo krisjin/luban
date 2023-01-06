@@ -23,12 +23,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * <p/>
- * User : krisibm@163.com
- * Date: 2015/6/30
- * Time: 22:37
- */
 public final class ExcelUtil {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExcelUtil.class);
