@@ -5,12 +5,6 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.util.Enumeration;
 
-/**
- * <p/>
- * User : krisibm@163.com
- * Date: 2015/7/9
- * Time: 17:37
- */
 public class ClassUtil {
     /**
      * 查找包含相同类名的jar文件
