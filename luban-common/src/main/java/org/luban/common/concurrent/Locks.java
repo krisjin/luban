@@ -69,8 +69,7 @@ public class Locks {
      * @param doubleCheck 拿到锁后进行二次校验，如果满足条件则不需要等待
      * @return 是否成功
      */
-    public static boolean awaitQuiet(final Lock lock, final Condition condition, final long timeout,
-                                     final Callable<Boolean> doubleCheck) {
+    public static boolean awaitQuiet(final Lock lock, final Condition condition, final long timeout, final Callable<Boolean> doubleCheck) {
         boolean locked = false;
         try {
             if (timeout > 0) {
