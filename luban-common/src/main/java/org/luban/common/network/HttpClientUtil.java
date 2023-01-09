@@ -127,8 +127,7 @@ public final class HttpClientUtil {
                 if (resp.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                     // 4. 获取响应体
                     HttpEntity entity = resp.getEntity();
-                    System.out.println("Response content length = "
-                            + entity.getContentLength());
+                    System.out.println("Response content length = " + entity.getContentLength());
                     System.out.println("------");
                     strResult = EntityUtils.toString(resp.getEntity());
                 }
@@ -221,6 +220,9 @@ public final class HttpClientUtil {
         HttpPost httpPost = new HttpPost(url);
         httpPost.addHeader("Content-Type", "application/json;charset=utf-8"); //添加请求头
         httpPost.setHeader("Accept", "application/json");
+        httpPost.setHeader("X-EOS-UserName", "tiger");
+        httpPost.setHeader("X-EOS-UserId", "-1");
+
         try {
             httpPost.setEntity(new StringEntity(params.toJSONString(), "utf-8"));
             CloseableHttpResponse resp = client.execute(httpPost);
@@ -266,5 +268,75 @@ public final class HttpClientUtil {
             }
         }
         return instanceTaskId;
+    }
+
+
+    public static void main(String[] args) {
+        ///bps/opr/query/query-work-items
+        String baseUrl = "http://localhost:48084";
+        String queryWorkItemsUrl = "bps/opr/query/query-work-items";
+
+        //查询指定活动的工作项
+        String activityInstIdQuery = baseUrl + "/bps/opr/work-item/query-work-items-by-activity-inst-id";
+        String workItemByProcess = baseUrl + "/bps/opr/work-item/query-work-items-by-process-inst-id";
+
+        String previousActivities = baseUrl + "/bps/opr/back-activity/get-previous-activities";
+
+        String backAct = baseUrl + "/bps/opr/back-activity/back-activity-3";
+
+
+//        String url = "http://localhost:48084/bps/opr/query/query-activity-instances";
+
+
+//        {
+//            "actInstId": 0,
+//                "pageCond": {
+//            "begin": 0,
+//                    "beginIndex": 0,
+//                    "count": true,
+//                    "currentPage": 0,
+//                    "first": true,
+//                    "last": true,
+//                    "length": 0,
+//                    "totalCount": 0,
+//                    "totalPage": 0
+//        }
+//        }
+
+//
+//        X-BPS-ClientId:[BPS-SERVER-STANDALONE]
+//        X-BPS-TenantToken:[null]
+//        X-EOS-UserId:[-1]
+//        X-BPS-TenantId:[null]
+//        X-EOS-UserName:[Tiger]
+//
+        JSONObject mapParam = new JSONObject();
+
+        //查询工作项
+
+
+
+        //查询可回退数据
+//        mapParam.put("currentActInstId", 24);
+//        mapParam.put("destActDefId", "startActivity");//开始节点，查询所有
+        //执行回退
+//        mapParam.put("destActDefId", "manualActivity");
+//        mapParam.put("rollBackStrategy", "one_step");
+
+
+        mapParam.put("procInstId",21);
+        String result = doPost(workItemByProcess, mapParam);
+//        mapParam.put("actInstId", 3);
+//        String result = doPost(activityInstIdQuery, mapParam);
+
+        //查询可回退数据
+//        mapParam.put("currentActInstId", 6);
+//        mapParam.put("destActDefId", "startActivity");//开始节点，查询所有
+//        String result = doPost(previousActivities, mapParam);
+
+//        String result = doPost(backAct, mapParam);
+
+        System.err.println(result);
+
     }
 }
