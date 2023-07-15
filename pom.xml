@@ -11,6 +11,7 @@
         <module>luban-event</module>
         <module>luban-model</module>
         <module>luban-bloomfilter</module>
+        <module>luban-func</module>
     </modules>
     <packaging>pom</packaging>
     <name>luban</name>
