@@ -137,7 +137,7 @@
         <dependency>
             <groupId>org.owasp.esapi</groupId>
             <artifactId>esapi</artifactId>
-            <version>2.0.1</version>
+            <version>2.3.0.0</version>
             <exclusions>
                 <!-- 以下依赖包版本低于项目,目前暂不需要的依赖也未引入 -->
                 <exclusion>
