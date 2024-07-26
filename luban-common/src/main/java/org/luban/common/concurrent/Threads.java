@@ -1,10 +1,13 @@
 package org.luban.common.concurrent;
 
 
+import com.alibaba.fastjson.JSONObject;
 import org.luban.common.exception.Abnormity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.*;
 
 /**
@@ -21,8 +24,7 @@ public class Threads {
      * @return 任务结果
      * @throws InterruptedException
      */
-    public static <T, M extends Callable<T>> List<T> invoke(final List<M> tasks, final int maxThreads,
-                                                            final Abnormity abnormity) throws InterruptedException {
+    public static <T, M extends Callable<T>> List<T> invoke(final List<M> tasks, final int maxThreads, final Abnormity abnormity) throws InterruptedException {
         return invoke(tasks, maxThreads, abnormity, null);
     }
 
@@ -36,8 +38,7 @@ public class Threads {
      * @return 任务结果
      * @throws InterruptedException
      */
-    public static <T, M extends Callable<T>> List<T> invoke(final List<M> tasks, final int maxThreads,
-                                                            final Abnormity abnormity, final String name) throws InterruptedException {
+    public static <T, M extends Callable<T>> List<T> invoke(final List<M> tasks, final int maxThreads, final Abnormity abnormity, final String name) throws InterruptedException {
         if (tasks == null || tasks.isEmpty()) {
             return new ArrayList<T>();
         }
@@ -70,8 +71,7 @@ public class Threads {
      * @return 任务结果
      * @throws InterruptedException
      */
-    public static <T, M extends Callable<T>> List<T> invoke(final List<M> tasks, final ExecutorService executorService,
-                                                            final Abnormity abnormity) throws InterruptedException {
+    public static <T, M extends Callable<T>> List<T> invoke(final List<M> tasks, final ExecutorService executorService, final Abnormity abnormity) throws InterruptedException {
         List<T> results = new ArrayList<T>();
         if (tasks == null || tasks.isEmpty()) {
             return results;
@@ -107,4 +107,14 @@ public class Threads {
         return results;
     }
 
+    public static void main(String[] args) {
+        Map<String, Object> businessParams = new HashMap<>();
+        Map<String, String> mm = new HashMap<>();
+        mm.put("publicKey", "djksfdjklfadsjjlasd");
+        businessParams.put("extra", mm);
+
+        System.err.println(JSONObject.toJSONString(businessParams));
+
+
+    }
 }

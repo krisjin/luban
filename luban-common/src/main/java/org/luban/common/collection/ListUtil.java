@@ -3,8 +3,10 @@ package org.luban.common.collection;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -57,4 +59,54 @@ public final class ListUtil {
     }
 
 
+    public static void main(String[] args) {
+        Map<String, String> userNode = new HashMap<>();
+        userNode.put("zhangsan", "1");
+        userNode.put("lisi", "2");
+        userNode.put("wangwu", "3");
+        userNode.put("xuqiu", "3");
+
+        Map<String, Integer> dd = new HashMap<>();
+
+        userNode.forEach((k, v) -> {
+            Integer d = dd.get(v);
+            if (null == d) {
+                d = 0;
+            }
+            dd.put(v, d + 1);
+        });
+        System.err.println();
+
+//        userNode.forEach((k,v) ->{
+//           dd.get(v)+;
+////            dd.put(v, a);
+//        });
+//        System.err.println(111);
+
+
+//        Map<String, Integer> map = new HashMap<>();
+//        map.put("A", 1);
+//        map.put("B", 3);
+//        map.put("C", 2);
+//        map.put("D", 4);
+//        map.put("E", 2);
+//        map.put("F", 4);
+//        map.put("G", 3);
+//        map.put("H", 2);
+//
+//        Map<Integer, List<String>> groupedMap = new HashMap<>();
+//
+//        map.forEach((key, value) -> {
+//            if (groupedMap.containsKey(value)) {
+//                groupedMap.get(value).add(key);
+//            } else {
+//                List<String> keys = new ArrayList<>();
+//                keys.add(key);
+//                groupedMap.put(value, keys);
+//            }
+//        });
+//
+//        System.out.println(groupedMap);
+//    }
+    }
 }

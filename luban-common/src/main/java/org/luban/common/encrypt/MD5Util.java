@@ -1,7 +1,6 @@
 package org.luban.common.encrypt;
 
 import com.google.common.base.Preconditions;
-import org.luban.common.codec.ByteUtil;
 
 import java.io.FileInputStream;
 import java.io.UnsupportedEncodingException;
@@ -60,7 +59,7 @@ public final class MD5Util {
      * @return md5摘要
      */
     public static String digestHex(byte[] source) {
-        return ByteUtil.byte2hex(digest(source));
+        return byte2hex(digest(source));
     }
 
     /**
@@ -70,7 +69,29 @@ public final class MD5Util {
      * @return md5摘要
      */
     public static String digestHex(String source) {
-        return ByteUtil.byte2hex(digest(source));
+        return byte2hex(digest(source));
+    }
+
+
+    /**
+     * 将字节数组转换成十六进制字符串形式
+     *
+     * @param bytes 字节数组
+     * @return 十六进制字符串
+     */
+    public static String byte2hex(byte[] bytes) {
+        if (bytes == null || bytes.length == 0) {
+            return "";
+        }
+        StringBuilder builder = new StringBuilder();
+        for (byte b : bytes) {
+            String hex = (Integer.toHexString(b & 0XFF));
+            if (hex.length() == 1) {
+                hex = '0' + hex;
+            }
+            builder.append(hex);
+        }
+        return builder.toString();
     }
 
 
@@ -128,6 +149,9 @@ public final class MD5Util {
 
     //389d49e4ec456577d816f741e1372350
     public static void main(String[] args) {
+
+        String dd = digestHex("dddd");
     }
+
 
 }
