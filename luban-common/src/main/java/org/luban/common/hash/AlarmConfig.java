@@ -15,7 +15,11 @@ public class AlarmConfig {
     /**
      * 调用次数
      */
-    private String invokeCount;
+    private int invokeCount;
+    /**
+     * 执行时间,单位秒
+     */
+    private int executeTime;
     /**
      * 告警阈值，例如80%
      */
@@ -29,11 +33,11 @@ public class AlarmConfig {
         this.probeTime = probeTime;
     }
 
-    public String getInvokeCount() {
+    public int getInvokeCount() {
         return invokeCount;
     }
 
-    public void setInvokeCount(String invokeCount) {
+    public void setInvokeCount(int invokeCount) {
         this.invokeCount = invokeCount;
     }
 
@@ -45,11 +49,20 @@ public class AlarmConfig {
         this.alarmThreshold = alarmThreshold;
     }
 
+    public int getExecuteTime() {
+        return executeTime;
+    }
+
+    public void setExecuteTime(int executeTime) {
+        this.executeTime = executeTime;
+    }
+
     public static void main(String[] args) {
         AlarmConfig alarmConfig = new AlarmConfig();
         alarmConfig.setProbeTime("60");
-        alarmConfig.setInvokeCount("5");
+        alarmConfig.setInvokeCount(5);
         alarmConfig.setAlarmThreshold("80");
+        alarmConfig.setExecuteTime(12);
         System.out.println(JSONObject.toJSONString(alarmConfig));
     }
 }
