@@ -6,7 +6,7 @@ package org.luban.common.hash;
  */
 public class ConsistentHashingTest {
     public static void main(String[] args) {
-        ConsistentHashing consistentHashing = new ConsistentHashing(3);
+        ConsistentHashing consistentHashing = new ConsistentHashing(1);
 
         Node node1 = new Node("Node1");
         Node node2 = new Node("Node2");
@@ -19,13 +19,23 @@ public class ConsistentHashingTest {
         System.out.println("Get node for key 'A': " + consistentHashing.getNode("A"));
         System.out.println("Get node for key 'B': " + consistentHashing.getNode("B"));
         System.out.println("Get node for key 'C': " + consistentHashing.getNode("C"));
+        System.out.println("Get node for key 'D': " + consistentHashing.getNode("D"));
 
-        consistentHashing.removeNode(node2);
+        consistentHashing.removeNode(node3);
 
         System.out.println("After removing Node2:");
         System.out.println("Get node for key 'A': " + consistentHashing.getNode("A"));
         System.out.println("Get node for key 'B': " + consistentHashing.getNode("B"));
         System.out.println("Get node for key 'C': " + consistentHashing.getNode("C"));
-        System.out.println("Get node for key 'D': " + consistentHashing.getNode("C"));
+        System.out.println("Get node for key 'D': " + consistentHashing.getNode("D"));
+
+        consistentHashing.addNode(node3);
+
+
+        System.out.println("Get node for key 'A': " + consistentHashing.getNode("A"));
+        System.out.println("Get node for key 'B': " + consistentHashing.getNode("B"));
+        System.out.println("Get node for key 'C': " + consistentHashing.getNode("C"));
+        System.out.println("Get node for key 'D': " + consistentHashing.getNode("D"));
+
     }
 }
